@@ -1,12 +1,12 @@
 import React from "react";
-import Card from "./../components/card";
+import Card from "./../components/experiencecard";
 import { Container } from "./../styled-components/Containers";
-import NavBar from "./../components/navbar";
+// import NavBarSide from "./../components/navbar";
 
 export default function Businesses() {
 	return (
 		<>
-			<NavBar />
+			{/* <NavBar /> */}
 			<Container justify="center">
 				<Card src="https://i.pinimg.com/564x/d2/2a/61/d22a61cdd29f2958c2c61e535569a3b3.jpg" />
 				<Card src="https://i.pinimg.com/564x/3d/6e/25/3d6e25e2a734c342f50a7e484048dac9.jpg" />

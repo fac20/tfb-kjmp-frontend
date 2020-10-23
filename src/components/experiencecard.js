@@ -1,7 +1,7 @@
 import React from "react";
-import Button from "./../styled-components/Button";
-import { TextContainer, DivContainer } from "./../styled-components/Containers";
-import Image from "./../styled-components/Img";
+import Button from "../styled-components/Button";
+import { TextContainer, DivContainer } from "../styled-components/Containers";
+import Image from "../styled-components/Img";
 
 export default function Card(props) {
 	return (

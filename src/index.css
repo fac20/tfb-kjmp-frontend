@@ -12,22 +12,55 @@ body {
 	font-family: "Anonymous Pro", monospace;
 }
 
-.navbar {
+.sticky {
 	/* border: solid red 3px; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 30%;
+	height: 100vh;
+	/* border: solid green 3px; */
+}
+.navbar {
+	width: 20%;
 	height: 100%;
+	/* border: solid black 3px; */
+	position: fixed;
+}
+.navbartitle {
+	/* border: solid red 3px; */
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 20vh;
+	/* border: solid black 3px; */
+}
+.title {
+	margin-left: 2rem;
 }
 
-@media all and (max-width: 938px) {
-	.navbar {
+@media all and (max-width: 768px) {
+	.navbar,
+	.sticky {
+		justify-content: center;
+		width: 100%;
+		height: 20vh;
+		position: static;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.navbartitle {
 		justify-content: center;
 	}
 	body {
 		font-size: 10px;
+	}
+	.title {
+		margin-left: 0rem;
 	}
 }
 

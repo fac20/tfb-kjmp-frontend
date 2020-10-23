@@ -14,8 +14,9 @@ export const Container = styled.div`
 	justify-content: ${props => props.justify};
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 80vw;
 	height: 100%;
+	/* border: solid red 3px; */
 `;
 
 export const DivContainer = styled.div`
@@ -23,7 +24,7 @@ export const DivContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border: solid black 3px;
+	/* border: solid black 3px; */
 	margin: 1rem;
 	border-radius: 20px;
 	background: #fcf7f0;
