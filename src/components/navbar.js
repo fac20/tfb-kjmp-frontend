@@ -1,6 +1,7 @@
 import React from "react";
 import NavList from "./../components/navList";
 import { Link } from "react-router-dom";
+import SearcBar from "./../components/searchbar";
 
 export function NavBarSide() {
 	return (
@@ -21,6 +22,7 @@ export function NavBarTitle() {
 				<Link to="/" className="h1link">
 					<h1 className="title">THE BLACK QUEER TRAVEL GUIDE</h1>
 				</Link>
+				<SearcBar />
 			</section>
 		</>
 	);
