@@ -5,6 +5,8 @@ export const RowResponsive = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+	flex-wrap: wrap;
+	width: ${props => props.width};
 	/* border: solid red 3px; */
 
 	@media all and (max-width: 1000px) {
@@ -17,6 +19,7 @@ export const ColumnResponsive = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	flex-wrap: wrap;
 	/* border: solid red 3px; */
 
 	@media all and (max-width: 1000px) {
