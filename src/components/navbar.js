@@ -1,15 +1,28 @@
 import React from "react";
 import NavList from "./../components/navList";
 import { Link } from "react-router-dom";
+import SearcBar from "./../components/searchbar";
 
-export default function NavBar() {
+export function NavBarSide() {
 	return (
 		<>
-			<section className="navbar">
+			<div className="sticky">
+				<section className="navbar">
+					<NavList />
+				</section>
+			</div>
+		</>
+	);
+}
+
+export function NavBarTitle() {
+	return (
+		<>
+			<section className="navbartitle">
 				<Link to="/" className="h1link">
-					<h1>THE BLACK QUEER TRAVEL GUIDE</h1>
+					<h1 className="title">THE BLACK QUEER TRAVEL GUIDE</h1>
 				</Link>
-				<NavList />
+				<SearcBar />
 			</section>
 		</>
 	);

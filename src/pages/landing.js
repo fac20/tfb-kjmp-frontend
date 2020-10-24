@@ -9,7 +9,7 @@ export default function LandingPage() {
 		<>
 			<Container justify="center">
 				<Link to="/laws">
-					<Img src={logo} width="80vw" />
+					<Img src={logo} width="55vw" />
 				</Link>
 			</Container>
 		</>

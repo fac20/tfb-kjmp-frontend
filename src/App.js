@@ -4,6 +4,7 @@ import Businesses from "./pages/businesses.js";
 import ThingsToDo from "./pages/thingsToDo.js";
 import Experiences from "./pages/experiences.js";
 import Laws from "./pages/laws.js";
+import Countries from "./pages/countries";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
 					<Route path="/thingstodo" component={ThingsToDo} />
 					<Route path="/experiences" component={Experiences} />
 					<Route path="/laws" component={Laws} />
-					<Route path="/" component={LandingPage} />
+					<Route path="/countries" component={Countries} />
+					<Route exact path="/" component={LandingPage} />
 				</Switch>
 			</Router>
 		</>

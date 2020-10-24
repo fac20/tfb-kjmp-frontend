@@ -6,6 +6,10 @@ export const TextContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 30vw;
+
+	@media all and (max-width: 700px) {
+		width: 60vw;
+	}
 `;
 
 export const Container = styled.div`
@@ -14,8 +18,8 @@ export const Container = styled.div`
 	justify-content: ${props => props.justify};
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
-	height: 100%;
+	width: 80vw;
+	background: ${props => props.back};
 `;
 
 export const DivContainer = styled.div`
@@ -23,9 +27,9 @@ export const DivContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border: solid black 3px;
+	/* border: solid black 3px; */
 	margin: 1rem;
-	border-radius: 20px;
+	/* border-radius: 20px; */
 	background: #fcf7f0;
 	box-shadow: 7px 10px #000000;
 `;

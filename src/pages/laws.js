@@ -1,18 +1,20 @@
 import React from "react";
-import Card from "./../components/card";
+
 import { Container } from "./../styled-components/Containers";
-import NavBar from "./../components/navbar";
+import LawsCard from "./../components/laws-card";
+import { RowResponsive } from "./../styled-components/Responsive";
+import { NavBarSide, NavBarTitle } from "./../components/navbar";
 
 export default function Laws() {
 	return (
 		<>
-			<NavBar />
-			<Container justify="center">
-				<Card src="none" />
-				<Card />
-				<Card />
-				<Card />
-			</Container>
+			<NavBarTitle />
+			<RowResponsive>
+				<NavBarSide />
+				<Container justify="center">
+					<LawsCard />
+				</Container>
+			</RowResponsive>
 		</>
 	);
 }
