@@ -3,6 +3,7 @@ import styled from "styled-components";
 export default styled.button`
 	height: 2rem;
 	border-radius: 20px;
+	border: solid black 2px;
 	box-shadow: 3px 5px #000000;
 	background: ${props => props.background};
 	margin: 0.9rem 0.9rem;

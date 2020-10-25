@@ -10,21 +10,24 @@
 body {
 	background: var(--background-color);
 	font-family: "Anonymous Pro", monospace;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .sticky {
 	/* border: solid red 3px; */
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
-	width: 30%;
+	width: 20vw;
 	height: 100vh;
 	/* border: solid green 3px; */
 }
 .navbar {
-	width: 20%;
-	height: 100%;
+	width: 20vw;
+	height: 20vh;
 	/* border: solid black 3px; */
 	position: fixed;
 }
@@ -56,6 +59,7 @@ body {
 		align-items: center;
 		flex-wrap: wrap;
 	}
+
 	.navbartitle {
 		justify-content: center;
 	}
