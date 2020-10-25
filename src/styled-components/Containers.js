@@ -18,8 +18,9 @@ export const Container = styled.div`
 	justify-content: ${props => props.justify};
 	align-items: center;
 	flex-wrap: wrap;
-	width: 80vw;
+	width: 79vw;
 	background: ${props => props.back};
+	padding-top: ${props => props.padTop};
 `;
 
 export const DivContainer = styled.div`
@@ -30,6 +31,6 @@ export const DivContainer = styled.div`
 	/* border: solid black 3px; */
 	margin: 1rem;
 	/* border-radius: 20px; */
-	background: #fcf7f0;
+	background: #ffffff;
 	box-shadow: 7px 10px #000000;
 `;

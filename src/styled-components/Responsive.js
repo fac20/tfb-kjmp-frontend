@@ -9,7 +9,7 @@ export const RowResponsive = styled.div`
 	width: ${props => props.width};
 	/* border: solid red 3px; */
 
-	@media all and (max-width: 1000px) {
+	@media all and (max-width: 700px) {
 		flex-direction: column;
 	}
 `;
