@@ -6,7 +6,7 @@ import {
 	ColumnResponsive,
 	RowResponsive,
 } from "./../styled-components/Responsive";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Countries() {
 	const [data, setData] = useState([]);
@@ -24,21 +24,18 @@ export default function Countries() {
 
 	return (
 		<RowResponsive width=" 40vw">
-			<ul>
-				<li>hello</li>
-				{/* {data
-					? data.map(data => (
-							<>
-								<Link to="/countries/{data.id}">
-									<ColumnResponsive>
-										<Img src={geotag} alt="" width="10vw" />
-										<h1 key={data.id}>{data.country_name}</h1>
-									</ColumnResponsive>
-								</Link>
-							</>
-					  ))
-					: null} */}
-			</ul>
+			{data
+				? data.map(data => (
+						<div key={data.id}>
+							<Link to="/countries/{data.id}">
+								<ColumnResponsive>
+									<Img src={geotag} alt="" width="10vw" />
+									<h1>{data.country_name}</h1>
+								</ColumnResponsive>
+							</Link>
+						</div>
+				  ))
+				: null}
 		</RowResponsive>
 	);
 }
