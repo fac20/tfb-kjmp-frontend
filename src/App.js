@@ -12,10 +12,7 @@ function App() {
 	return (
 		<>
 			<Router>
-				<Switch>	
-					<Route path="/continents/:name" children={<Countries />} />
-					<Route path="/continents" component={Continents} />{" "}
-					{/* map of world */}
+				<Switch>
 					<Route path="/continents/:name/:id/laws" component={Laws} />
 					<Route
 						path="/continents/:name/:id/thingstodo"
@@ -25,6 +22,9 @@ function App() {
 						path="/continents/:name/:id/businesses"
 						component={Businesses}
 					/>
+					<Route path="/continents/:name" children={<Countries />} />
+					<Route path="/continents" component={Continents} />{" "}
+					{/* map of world */}
 					<Route exact path="/" component={LandingPage} />
 				</Switch>
 			</Router>
