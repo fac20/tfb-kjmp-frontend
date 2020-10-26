@@ -14,7 +14,6 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/continents/:name/:id/laws" component={Laws} />
-					<Route path="/continents/:name" children={<Countries />} />
 					<Route exact path="/continents" component={Continents} />{" "}
 					{/* map of world */}
 					<Route
@@ -29,6 +28,7 @@ function App() {
 						path="/continents/:name/:id/experiences"
 						component={Experiences}
 					/>
+					<Route path="/continents/:name" children={<Countries />} />
 					<Route exact path="/" component={LandingPage} />
 				</Switch>
 			</Router>

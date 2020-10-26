@@ -30,6 +30,7 @@ export default function Countries() {
 	console.log(data[0]);
 
 	let { url, path } = useRouteMatch();
+	console.log(url);
 	return (
 		<RowResponsive width=" 40vw">
 			{data
