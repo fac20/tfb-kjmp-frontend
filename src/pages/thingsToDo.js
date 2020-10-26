@@ -7,6 +7,7 @@ import {
 } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams } from "react-router-dom";
+import ttdimg from "./../images/thingstodo.png";
 
 export default function ThingsToDo() {
 	const [thingsToDoData, setThingsToDoData] = useState();
@@ -19,23 +20,30 @@ export default function ThingsToDo() {
 			.catch(error => error);
 	}, [id]);
 
-	// const data = thingsToDoData.map(
-	// 	({ name, details, date_time, location, created_at }) =>
-	// 		<ThingsToDoCard
-	// 			src="https://cdn.dribbble.com/users/2417352/screenshots/11825923/media/ca572e930d5ccba2f5741f9d99076904.jpg"
-	// 			title={name}
-	// 			details={details}
-	// 			date_time={}ate_time}
-	// 			oacation={location}
-	// 		/>
-	// );
-
 	return (
 		<>
 			<NavBarTitle />
 			<RowResponsive>
 				<NavBarSide />
-				<Container justify="center"></Container>
+				<Container justify="center">
+					{thingsToDoData ? (
+						thingsToDoData.map(
+							({ name, details, date_time, location, created_at, id }) => (
+								<ThingsToDoCard
+									key={id}
+									src={ttdimg}
+									name={name}
+									details={details}
+									date_time={date_time}
+									location={location}
+									created_at={created_at}
+								/>
+							),
+						)
+					) : (
+						<h1>No Information Yet.....</h1>
+					)}
+				</Container>
 			</RowResponsive>
 		</>
 	);
