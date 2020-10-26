@@ -47,10 +47,14 @@ export default function ExperiencesCard({
 				<p>{socials}</p>
 				<p>
 					Posted{" "}
-					{(days && days + " days") ||
-						(hours && hours + " hours") ||
-						(minutes && minutes + " minutes") ||
-						(seconds && seconds + " seconds")}{" "}
+					{(days && (days === 1 ? days + " day" : days + " days")) ||
+						(hours && (hours === 1 ? hours + " hour" : hours + " hours")) ||
+						(minutes &&
+							(minutes === 1 ? minutes + " minute" : minutes + " minutes")) ||
+						(seconds &&
+							(seconds === 1
+								? seconds + " second"
+								: seconds + " seconds"))}{" "}
 					ago
 				</p>
 				<RowResponsive>
