@@ -31,3 +31,15 @@ export const Input = styled.input`
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
 `;
+
+export const TextArea = styled.textarea`
+	border: hsl(188, 13%, 45%) 3px solid;
+	margin: 2rem;
+	width: 10vw;
+	height: 12vh;
+	border-radius: 20px;
+	background: hsl(188, 13%, 45%);
+	font-size: 2rem;
+	font-weight: 800px;
+	font-family: "Anonymous Pro", monospace;
+`;
