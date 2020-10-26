@@ -16,7 +16,7 @@ export const Container = styled.div`
 	/* border: solid red 3px; */
 	display: flex;
 	justify-content: ${props => props.justify};
-	align-items: center;
+	align-items: ${props => props.align};
 	flex-wrap: wrap;
 	width: 79vw;
 	background: ${props => props.back};

@@ -17,7 +17,7 @@ export default function ThingsToDoCard(props) {
 						ever since the 1500s, when an unknown printer took a galley of type
 					</Paragraph>
 				</TextContainer>
-				<h2>#BLACK #QUEER</h2>
+				<h2>#BLACK #QUEER</h2>d
 				<Button background="hsl(46, 77%, 68%)">hello</Button>
 			</DivContainer>
 		</>
