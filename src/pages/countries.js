@@ -34,7 +34,7 @@ export default function Countries() {
 			{data
 				? data.map(data => (
 						<div key={data.id}>
-							<Link to="/countries/{data.id}">
+							<Link to={`/countries/${data.id}/laws`}>
 								<ColumnResponsive>
 									<Img src={geotag} alt="" width="10vw" />
 									<h1>{data.country_name}</h1>

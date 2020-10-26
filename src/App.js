@@ -12,15 +12,19 @@ function App() {
 	return (
 		<>
 			<Router>
-				<Switch>
-					<Route path="/businesses" component={Businesses} />
-					<Route path="/thingstodo" component={ThingsToDo} />
-					<Route path="/experiences" component={Experiences} />
-					<Route path="/laws" component={Laws} />
-					<Route path="/countries/:id" component={Continents} />
+				<Switch>	
 					<Route path="/continents/:name" children={<Countries />} />
 					<Route path="/continents" component={Continents} />{" "}
 					{/* map of world */}
+					<Route path="/continents/:name/:id/laws" component={Laws} />
+					<Route
+						path="/continents/:name/:id/thingstodo"
+						component={ThingsToDo}
+					/>
+					<Route
+						path="/continents/:name/:id/businesses"
+						component={Businesses}
+					/>
 					<Route exact path="/" component={LandingPage} />
 				</Switch>
 			</Router>
