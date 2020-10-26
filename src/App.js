@@ -18,6 +18,17 @@ function App() {
 					<Route path="/experiences" component={Experiences} />
 					<Route path="/laws" component={Laws} />
 					<Route path="/countries/:id/laws" component={Laws} />
+
+					<Route path="/continents/:name/:id/laws" component={Laws} />
+					<Route
+						path="/continents/:name/:id/thingstodo"
+						component={ThingsToDo}
+					/>
+					<Route
+						path="/continents/:name/:id/businesses"
+						component={Businesses}
+					/>
+
 					<Route path="/countries" component={Countries} />
 					<Route path="/continents" component={Continents} />
 					<Route exact path="/" component={LandingPage} />

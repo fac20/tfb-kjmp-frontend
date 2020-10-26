@@ -7,26 +7,13 @@ import {
 } from "../styled-components/Containers";
 import Paragraph from "./../styled-components/Paragraph";
 
-export default function LawsCard(props) {
+export default function LawsCard({ title, content }) {
 	return (
 		<Container justify="center" align="flex-start" padTop="0">
 			<DivContainer>
-				<h1>LAWS</h1>
+				<h1>{title}</h1>
 				<TextContainer>
-					<Paragraph>
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-					</Paragraph>
+					<Paragraph>{content}</Paragraph>
 				</TextContainer>
 				<Button background="hsl(46, 77%, 68%)">V</Button>
 			</DivContainer>

@@ -23,7 +23,24 @@ export default function Laws() {
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start" padTop="0">
-					<LawsCard />
+					{lawData ? (
+						<>
+							{lawData.hasOwnProperty("Legislation") ? (
+								<LawsCard title="Legislation" content={lawData.Legislation} />
+							) : null}
+							{lawData.hasOwnProperty("Population") ? (
+								<LawsCard title="Population" content={lawData.Population} />
+							) : null}
+							{lawData.hasOwnProperty("Culture") ? (
+								<LawsCard title="Culture" content={lawData.Culture} />
+							) : null}
+							{lawData.hasOwnProperty("Warnings") ? (
+								<LawsCard title="Warnings" content={lawData.Warnings} />
+							) : null}
+						</>
+					) : (
+						<h1>No Information Yet.....</h1>
+					)}
 				</Container>
 			</RowResponsive>
 		</>
