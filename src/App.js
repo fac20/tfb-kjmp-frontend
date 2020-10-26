@@ -17,9 +17,10 @@ function App() {
 					<Route path="/thingstodo" component={ThingsToDo} />
 					<Route path="/experiences" component={Experiences} />
 					<Route path="/laws" component={Laws} />
-					<Route path="/countries" component={Countries} />
-					<Route path="/continents" component={Continents} />
 					<Route path="/countries/:id" component={Continents} />
+					<Route path="/continents/:name" children={<Countries />} />
+					<Route path="/continents" component={Continents} />{" "}
+					{/* map of world */}
 					<Route exact path="/" component={LandingPage} />
 				</Switch>
 			</Router>
