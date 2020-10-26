@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Continents() {
 	return (
 		<>
-			<Link to="/laws">
+			<Link to="/continents/africa">
 				<Container justify="center" padTop="5rem">
 					<Img alt="" src={world} width="80vw" />
 				</Container>

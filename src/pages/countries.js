@@ -6,15 +6,22 @@ import {
 	ColumnResponsive,
 	RowResponsive,
 } from "./../styled-components/Responsive";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Countries() {
 	const [data, setData] = useState([]);
-
+	let { name } = useParams();
 	useEffect(() => {
 		fetch("https://tfb-bqtg.herokuapp.com/countries")
 			.then(result => result.json())
-			.then(result => setData(result))
+			.then(result => {
+				console.log(result);
+				const correctCountries = result.filter(
+					country => country.continent === name,
+				);
+				console.log(correctCountries);
+				setData(correctCountries);
+			})
 			.catch(error => error);
 	}, []);
 
