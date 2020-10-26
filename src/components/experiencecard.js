@@ -3,23 +3,62 @@ import Button from "../styled-components/Button";
 import { TextContainer, DivContainer } from "../styled-components/Containers";
 import Image from "../styled-components/Img";
 import Paragraph from "./../styled-components/Paragraph";
-import { RowResponsive } from "./../styled-components/Responsive";
+import {
+	ColumnResponsive,
+	RowResponsive,
+} from "./../styled-components/Responsive";
 
-export default function ExperiencesCard(props) {
+import smiley from "./../images/smileyface.svg";
+import sad from "./../images/sadface.svg";
+import straight from "./../images/straightface.svg";
+
+export default function ExperiencesCard({
+	socials,
+	details,
+	tags,
+	overall_experience,
+	created_at,
+}) {
+	const smileyIcon = { 1: sad, 2: sad, 3: straight, 4: smiley, 5: smiley };
+	const dateNow = new Date().toISOString();
+
+	const start = new Date(created_at).getTime();
+	const end = new Date(dateNow).getTime();
+	let seconds = Math.round(Math.abs(end - start) / 1000); // We'll round away millisecond differences.
+	const days = Math.floor(seconds / 86400);
+	seconds -= days * 86400;
+	const hours = Math.floor(seconds / 3600);
+	seconds -= hours * 3600;
+	const minutes = Math.floor(seconds / 60);
+	seconds -= minutes * 60;
+
 	return (
 		<>
 			<DivContainer>
-				<Image src={props.src} alt="random" className="whatever" width="3vw" />
+				<Image
+					src={smileyIcon[overall_experience]}
+					alt="random"
+					className="whatever"
+					width="3vw"
+				/>
 				<TextContainer>
-					<Paragraph width="25vw">
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of type
-					</Paragraph>
+					<Paragraph width="25vw">{details}</Paragraph>
 				</TextContainer>
+				<p>{socials}</p>
+				<p>
+					Posted{" "}
+					{(days && days + " days") ||
+						(hours && hours + " hours") ||
+						(minutes && minutes + " minutes") ||
+						(seconds && seconds + " seconds")}{" "}
+					ago
+				</p>
 				<RowResponsive>
-					<Button background="hsl(46, 77%, 68%)">#black</Button>
-					<Button background="hsl(46, 77%, 68%)">#queer</Button>
+					{tags
+						? tags.map(tag => (
+								<Button background="hsl(46, 77%, 68%)">#{tag}</Button>
+						  ))
+						: null}
 				</RowResponsive>
 			</DivContainer>
 		</>
