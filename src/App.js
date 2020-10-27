@@ -1,6 +1,7 @@
 import React from "react";
 import LandingPage from "./pages/landing.js";
 import Businesses from "./pages/businesses.js";
+import LoginPage from "./pages/login.js";
 import ThingsToDo from "./pages/thingsToDo.js";
 import Experiences from "./pages/experiences.js";
 import Laws from "./pages/laws.js";
@@ -32,6 +33,7 @@ function App() {
 					<Route path="/continents/:name" children={<Countries />} />
 					<Route path="/test" component={ExperiencesForm} />
 					<Route exact path="/" component={LandingPage} />
+					<Route path="/admin/login" component={LoginPage} />
 				</Switch>
 			</Router>
 		</>
