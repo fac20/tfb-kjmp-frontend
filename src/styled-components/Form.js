@@ -3,8 +3,9 @@ import img from "./../images/form-back.svg";
 
 const FormCont = styled.form`
 	background-size: 60vh;
-	width: 50vw;
+	width: 40vw;
 	height: 80vh;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,6 +15,13 @@ const FormCont = styled.form`
 	font-family: "Anonymous Pro", monospace;
 	font-size: 1.3rem;
 	font-weight: 800px;
+
+	@media screen and (max-width: 700px) {
+		width: 80vw;
+	}
+	@media screen and (max-width: 400px) {
+		width: 95vw;
+	}
 `;
 
 const Label = styled.label`
@@ -37,6 +45,8 @@ const CheckboxLabel = styled.label`
 const Fieldset = styled.fieldset`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	margin-top: 1rem;
+	border: none;
 `;
 
 const Input = styled.input`
