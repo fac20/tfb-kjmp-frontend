@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-// import { useState } from "react";
-
+import { React, useState, useEffect } from "react";
 import { Container } from "./../styled-components/Containers";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";

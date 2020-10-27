@@ -1,8 +1,20 @@
 import React from "react";
-import { Container } from "./../styled-components/Containers";
-import Img from "./../styled-components/Img";
-import world from "./../images/world-map.svg";
+import styled, { keyframes } from "styled-components";
+import { tada } from "react-animations";
 import { Link } from "react-router-dom";
+import { NavBarTitle } from "./../components/navbar";
+import { FlexCont, Container } from "./../styled-components/Containers";
+
+import background from "./../images/form-back.svg";
+
+const tadaAnimation = keyframes`${tada}`;
+const TadaDiv = styled.div`
+animation:none;
+
+&:hover{
+	
+	animation: 1s ${tadaAnimation}`;
+
 export default function Continents() {
 	const continentsArray = [
 		["africa", "Africa"],
@@ -17,13 +29,22 @@ export default function Continents() {
 
 	return (
 		<>
-			{continentsArray.map(pair => {
-				return (
-					<Link to={`/continents/${pair[0]}`}>
-						<h1>{pair[1]}</h1>
-					</Link>
-				);
-			})}
+			<NavBarTitle />
+			<FlexCont width="50vw" height="70vh" back={background}>
+				{continentsArray.map(pair => {
+					return (
+						<>
+							<TadaDiv>
+								<FlexCont border="black solid 3px">
+									<Link to={`/continents/${pair[0]}`} class="links">
+										<h1>{pair[1]}</h1>
+									</Link>
+								</FlexCont>
+							</TadaDiv>
+						</>
+					);
+				})}
+			</FlexCont>
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./../styled-components/Button";
-import ListTag from "./../styled-components/List";
+import List from "./../styled-components/List";
 import { Link, useRouteMatch, useLocation } from "react-router-dom";
 
 export default function NavList() {
@@ -14,25 +14,25 @@ export default function NavList() {
 		<>
 			<ul>
 				<Link to={`${joinPath}/laws`}>
-					<ListTag>
+					<List>
 						<Button>LAWS</Button>
-					</ListTag>
+					</List>
 				</Link>
 				<Link to={`${joinPath}/thingstodo`}>
-					<ListTag>
+					<List>
 						<Button>THINGS TO DO</Button>
-					</ListTag>
+					</List>
 				</Link>
 				<Link to={`${joinPath}/experiences`}>
-					<ListTag>
+					<List>
 						<Button>EXPERIENCES</Button>
-					</ListTag>
+					</List>
 				</Link>
-				<Link to={`${joinPath}/businesses`}>
-					<ListTag>
+				{/* <Link to={`${joinPath}/businesses`}>
+					<List>
 						<Button>BUSINESSES</Button>
-					</ListTag>
-				</Link>
+					</List>
+				</Link> */}
 			</ul>
 		</>
 	);

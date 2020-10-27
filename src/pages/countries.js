@@ -6,7 +6,19 @@ import {
 	ColumnResponsive,
 	RowResponsive,
 } from "./../styled-components/Responsive";
+import { NavBarTitle } from "./../components/navbar";
 import { Link, useParams, useRouteMatch } from "react-router-dom";
+import { FlexCont, Container } from "./../styled-components/Containers";
+import styled, { keyframes } from "styled-components";
+import { tada } from "react-animations";
+
+const tadaAnimation = keyframes`${tada}`;
+const TadaDiv = styled.div`
+animation:none;
+
+&:hover{
+	
+	animation: 1s ${tadaAnimation}`;
 
 export default function Countries() {
 	const [data, setData] = useState([]);
@@ -32,19 +44,33 @@ export default function Countries() {
 	let { url, path } = useRouteMatch();
 	console.log(url);
 	return (
-		<RowResponsive width=" 40vw">
-			{data
-				? data.map(data => (
-						<div key={data.id}>
-							<Link to={`${url}/${data.id}/laws`}>
-								<ColumnResponsive>
-									<Img src={geotag} alt="" width="10vw" />
-									<h1>{data.country_name}</h1>
-								</ColumnResponsive>
-							</Link>
-						</div>
-				  ))
-				: null}
-		</RowResponsive>
+		<>
+			<NavBarTitle />
+			<Container justify="center">
+				<FlexCont
+					width="45vw"
+					height="75vh"
+					className="countries"
+					border="black solid 3px">
+					<RowResponsive width=" 40vw">
+						{data
+							? data.map(data => (
+									<div key={data.id}>
+										<TadaDiv>
+											<FlexCont border="black solid 3px">
+												<Link to={`${url}/${data.id}/laws`} className="links">
+													<ColumnResponsive>
+														<h1>{data.country_name}</h1>
+													</ColumnResponsive>
+												</Link>
+											</FlexCont>
+										</TadaDiv>
+									</div>
+							  ))
+							: null}
+					</RowResponsive>
+				</FlexCont>
+			</Container>
+		</>
 	);
 }
