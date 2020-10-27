@@ -75,14 +75,3 @@ body {
 	text-decoration: none;
 	color: black;
 }
-
-.link {
-	text-decoration: none;
-	color: black;
-}
-
-.admindash {
-	width: 100vw;
-	height: 100vh;
-	background: hsl(0, 0%, 90%);
-}
