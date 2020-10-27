@@ -10,6 +10,7 @@ import {
 } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
 import { useParams } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 
 const ExperiencesForm = () => {
 	const [socials, setSocials] = React.useState("");
@@ -54,18 +55,13 @@ const ExperiencesForm = () => {
 						}}
 						value={details}></TextArea>
 				</Label>
-				<Label>
-					{" "}
-					Overall Experience:
-					<Input
-						onChange={event => {
-							setRating(event.target.value);
-						}}
-						value={rating}
-						type="number"
-						min="0"
-						max="5"></Input>
-				</Label>
+				<Label> Overall Experience:</Label>
+				<ReactStars
+					count={5}
+					onChange={newRating => setRating(newRating)}
+					size={72}
+					activeColor="#ffd700"
+				/>
 				Tag your post!
 				<Fieldset>
 					<CheckboxLabel>
