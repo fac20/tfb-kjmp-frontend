@@ -6,7 +6,7 @@ import { Container } from "./../styled-components/Containers";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 
 function ExperienceContent() {
 	const [experiencesData, setExperiencesData] = useState();
@@ -19,12 +19,15 @@ function ExperienceContent() {
 			.catch(error => error);
 	}, [id]);
 
+	const url = useLocation().pathname;
+
 	return (
 		<>
 			<NavBarTitle />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start">
+					<Link to={`${url}/shareexperience`}>ADD YOUR OWN</Link>
 					{experiencesData
 						? experiencesData.map(
 								({

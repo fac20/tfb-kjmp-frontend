@@ -2,8 +2,9 @@ import styled from "styled-components";
 import img from "./../images/form-back.svg";
 
 const FormCont = styled.form`
+	background-image: url(${img});
 	background-size: 60vh;
-	width: 40vw;
+	width: 30vw;
 	height: 80vh;
 	margin: auto;
 	display: flex;
@@ -32,8 +33,8 @@ const Label = styled.label`
 	font-size: 1.3rem;
 	font-weight: 800px;
 	cursor: pointer;
+	border-bottom: hsl(31, 95%, 84%) solid 7px;
 `;
-// border-bottom: hsl(31, 95%, 84%) solid 7px;
 
 const CheckboxLabel = styled.label`
 	font-size: 1.5rem;
@@ -52,7 +53,7 @@ const Fieldset = styled.fieldset`
 const Input = styled.input`
 	border: hsl(188, 13%, 45%) 3px solid;
 	margin: 0.5rem 0 2rem 0;
-	width: 100%;
+	width: 80%;
 	height: 4vh;
 	border-radius: 20px;
 	background: hsl(188, 13%, 45%);
@@ -70,7 +71,7 @@ const CheckboxInput = styled.input`
 const TextArea = styled.textarea`
 	border: hsl(188, 13%, 45%) 3px solid;
 	margin: 0.5rem 0 2rem 0;
-	width: 100%;
+	width: 80%;
 	height: 12vh;
 	border-radius: 20px;
 	background: hsl(188, 13%, 45%);

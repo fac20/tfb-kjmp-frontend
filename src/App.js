@@ -18,6 +18,10 @@ function App() {
 					<Route exact path="/continents" component={Continents} />{" "}
 					{/* map of world */}
 					<Route
+						path="/continents/:name/:id/experiences/shareexperience"
+						component={ExperiencesForm}
+					/>
+					<Route
 						path="/continents/:name/:id/thingstodo"
 						component={ThingsToDo}
 					/>
