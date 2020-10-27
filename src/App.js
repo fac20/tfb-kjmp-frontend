@@ -1,6 +1,7 @@
 import React from "react";
 import LandingPage from "./pages/landing.js";
 import Businesses from "./pages/businesses.js";
+import LoginPage from "./pages/login.js";
 import ThingsToDo from "./pages/thingsToDo.js";
 import Experiences from "./pages/experiences.js";
 import Laws from "./pages/laws.js";
@@ -36,6 +37,7 @@ function App() {
 					{/* Admin routes  */}
 
 					<Route exact path="/admin" component={AdminDashboard} />
+					<Route path="/admin/login" component={LoginPage} />
 				</Switch>
 			</Router>
 		</>
