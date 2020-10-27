@@ -48,6 +48,30 @@ body {
 	margin-left: 2rem;
 }
 
+.links {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: #eccf6e;
+}
+
+.countries {
+	overflow: scroll;
+}
+
+/* .countries::-webkit-scrollbar {
+	-webkit-appearance: vertical;
+}
+.countries::-webkit-scrollbar-track {
+	background: pink;
+} */
+
+-webkit-scrollbar-button {
+	background-color: pink;
+}
+
 @media all and (max-width: 768px) {
 	.navbar,
 	.sticky {

@@ -28,11 +28,11 @@ export default function NavList() {
 						<Button>EXPERIENCES</Button>
 					</List>
 				</Link>
-				<Link to={`${joinPath}/businesses`}>
+				{/* <Link to={`${joinPath}/businesses`}>
 					<List>
 						<Button>BUSINESSES</Button>
 					</List>
-				</Link>
+				</Link> */}
 			</ul>
 		</>
 	);

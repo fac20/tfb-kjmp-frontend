@@ -38,6 +38,24 @@ export const DivContainer = styled.div`
 	box-shadow: 7px 10px #000000;
 `;
 
+export const FlexCont = styled.div`
+	/* border: solid red 3px; */
+	display: flex;
+	justify-content: ${props => props.justify};
+	align-items: center;
+	flex-wrap: wrap;
+	width: ${props => props.width};
+	height: ${props => props.height};
+	background: ${props => props.back};
+	padding-top: ${props => props.padTop};
+	padding: 0.5rem;
+	border: ${props => props.border};
+	border-radius: ${props => props.radius};
+	/* background: #ffffff; */
+	box-shadow: 7px 10px #000000;
+	margin: 2rem;
+`;
+
 // Container hierarchy:
 // container
 // div container
