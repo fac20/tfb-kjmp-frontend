@@ -1,4 +1,5 @@
-import { React, useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import { Container } from "./../styled-components/Containers";
 import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
@@ -6,7 +7,7 @@ import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams, useLocation, Link } from "react-router-dom";
 
-function ExperienceContent() {
+export default function ExperienceContent() {
 	const [experiencesData, setExperiencesData] = useState();
 	const { id } = useParams();
 
@@ -54,9 +55,4 @@ function ExperienceContent() {
 			</RowResponsive>
 		</>
 	);
-}
-
-export default function Experiences(props) {
-	const value = true;
-	return <>{value ? <ExperienceContent /> : null}</>;
 }

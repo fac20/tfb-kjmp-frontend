@@ -3,7 +3,7 @@ import LandingPage from "./pages/landing.js";
 import Businesses from "./pages/businesses.js";
 import LoginPage from "./pages/login.js";
 import ThingsToDo from "./pages/thingsToDo.js";
-import Experiences from "./pages/experiences.js";
+import ExperienceContent from "./pages/experiences.js";
 import Laws from "./pages/laws.js";
 import Countries from "./pages/countries";
 import Continents from "./pages/continents";
@@ -32,7 +32,7 @@ function App() {
 					/>
 					<Route
 						path="/continents/:name/:id/experiences"
-						component={Experiences}
+						component={ExperienceContent}
 					/>
 					<Route path="/continents/:name" children={<Countries />} />
 					<Route path="/test" component={ExperiencesForm} />
