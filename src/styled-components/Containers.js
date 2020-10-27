@@ -20,7 +20,7 @@ export const Container = styled.div`
 	flex-wrap: wrap;
 	//79vw
 	width: 79vw;
-	background: ${props => props.back};
+	backcground: ${props => props.back};
 	padding-top: ${props => props.padTop};
 	border: ${props => props.border};
 	border-radius: ${props => props.radius};

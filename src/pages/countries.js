@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Img from "./../components/img";
 import geotag from "./../images/geotag.svg";
+import QuickExitButton from "./../components/exitButton";
 import {
 	ColumnResponsive,
 	RowResponsive,
@@ -13,16 +14,19 @@ import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
 
 const tadaAnimation = keyframes`${tada}`;
-const TadaDiv = styled.div`
-animation:none;
 
-&:hover{
-	
-	animation: 1s ${tadaAnimation}`;
+const TadaDiv = styled.div`
+	animation: none;
+	&:hover {
+		animation: 1s ${tadaAnimation};
+	}
+`;
 
 export default function Countries() {
 	const [data, setData] = useState([]);
 	let { name } = useParams();
+	let { url, path } = useRouteMatch();
+
 	useEffect(() => {
 		fetch("https://tfb-bqtg.herokuapp.com/countries")
 			.then(result => result.json())
@@ -37,15 +41,10 @@ export default function Countries() {
 			.catch(error => error);
 	}, []);
 
-	// const params = useParams();
-	// console.log(params);
-	console.log(data[0]);
-
-	let { url, path } = useRouteMatch();
-	console.log(url);
 	return (
 		<>
-			<NavBarTitle />
+			<NavBarTitle title={name} />
+			<QuickExitButton />
 			<Container justify="center">
 				<FlexCont
 					width="45vw"

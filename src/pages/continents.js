@@ -30,6 +30,7 @@ export default function Continents() {
 	return (
 		<>
 			<NavBarTitle />
+
 			<FlexCont width="50vw" height="70vh" back={background}>
 				{continentsArray.map(pair => {
 					return (

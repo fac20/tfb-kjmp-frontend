@@ -8,7 +8,6 @@ export default function NavList() {
 	const path = location.pathname.split("/");
 	path.pop();
 	let joinPath = path.join("/");
-
 	console.log(joinPath);
 	return (
 		<>
