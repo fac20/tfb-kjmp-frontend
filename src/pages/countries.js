@@ -20,6 +20,7 @@ const TadaDiv = styled.div`
 	&:hover {
 		animation: 1s ${tadaAnimation};
 	}
+	cursor: pointer;
 `;
 
 export default function Countries() {

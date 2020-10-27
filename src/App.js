@@ -57,7 +57,10 @@ function App() {
 					</Route>
 
 					<Route path="/test">
-						<ExperiencesForm />
+						<ExperiencesForm
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
 					</Route>
 
 					<Route exact path="/">

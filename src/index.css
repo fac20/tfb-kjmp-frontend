@@ -68,10 +68,6 @@ a:hover {
 	background: pink;
 } */
 
--webkit-scrollbar-button {
-	background-color: pink;
-}
-
 @media all and (max-width: 768px) {
 	.navbar,
 	.sticky {

@@ -15,8 +15,9 @@ import { useParams, useHistory } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Button from "../styled-components/Button";
 import { ColumnResponsive } from "../styled-components/Responsive";
+import { NavBarSide, NavBarTitle } from "./../components/navbar";
 
-const ExperiencesForm = () => {
+const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");
 	const [details, setDetails] = React.useState("");
 	const [rating, setRating] = React.useState("");
@@ -49,6 +50,8 @@ const ExperiencesForm = () => {
 
 	return (
 		<>
+			<NavBarTitle countryName={props.countryName} />
+
 			{submitted ? (
 				<SubmitContainer>
 					<SubmitMessage>Thank you for your submission</SubmitMessage>

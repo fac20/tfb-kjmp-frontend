@@ -3,17 +3,19 @@ import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
 import { Link } from "react-router-dom";
 import { NavBarTitle } from "./../components/navbar";
+import QuickExitButton from "./../components/exitButton";
 import { FlexCont, Container } from "./../styled-components/Containers";
 
 import background from "./../images/form-back.svg";
 
 const tadaAnimation = keyframes`${tada}`;
 const TadaDiv = styled.div`
-animation:none;
+	animation: none;
 
-&:hover{
-	
-	animation: 1s ${tadaAnimation}`;
+	&:hover {
+		animation: 1s ${tadaAnimation};
+	}
+`;
 
 export default function Continents() {
 	const continentsArray = [
@@ -30,7 +32,7 @@ export default function Continents() {
 	return (
 		<>
 			<NavBarTitle />
-
+			<QuickExitButton />
 			<FlexCont width="50vw" height="70vh" back={background}>
 				{continentsArray.map(pair => {
 					return (
