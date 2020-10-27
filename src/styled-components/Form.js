@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import img from "./../images/form-back.svg";
-export const FormCont = styled.form`
+
+const FormCont = styled.form`
 	background-image: url(${img});
 	background-size: 60vh;
-	width: 30vw;
+	width: 50vw;
 	height: 80vh;
 	display: flex;
 	justify-content: center;
@@ -14,13 +15,24 @@ export const FormCont = styled.form`
 	font-family: "Anonymous Pro", monospace;
 `;
 
-export const Label = styled.label`
+const Label = styled.label`
 	font-size: 2rem;
 	font-weight: 800px;
 	border-bottom: hsl(31, 95%, 84%) solid 7px;
 `;
 
-export const Input = styled.input`
+const CheckboxLabel = styled.label`
+	font-size: 1.5rem;
+	padding: 0.2rem;
+	display: flex;
+	align-items: center;
+`;
+const Fieldset = styled.fieldset`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+`;
+
+const Input = styled.input`
 	border: hsl(188, 13%, 45%) 3px solid;
 	margin: 2rem;
 	width: 10vw;
@@ -32,7 +44,13 @@ export const Input = styled.input`
 	font-family: "Anonymous Pro", monospace;
 `;
 
-export const TextArea = styled.textarea`
+const CheckboxInput = styled.input`
+	margin-left: 0.1rem;
+	height: 1.3rem;
+	width: 1.3rem;
+`;
+
+const TextArea = styled.textarea`
 	border: hsl(188, 13%, 45%) 3px solid;
 	margin: 2rem;
 	width: 10vw;
@@ -43,3 +61,13 @@ export const TextArea = styled.textarea`
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
 `;
+
+export {
+	FormCont,
+	Label,
+	Input,
+	CheckboxInput,
+	TextArea,
+	CheckboxLabel,
+	Fieldset,
+};

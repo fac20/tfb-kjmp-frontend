@@ -1,20 +1,46 @@
 import React from "react";
-import { FormCont, Label, Input, TextArea } from "../styled-components/Form";
+import {
+	FormCont,
+	Label,
+	Input,
+	TextArea,
+	CheckboxInput,
+	CheckboxLabel,
+	Fieldset,
+} from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
+import { useParams } from "react-router-dom";
 
 const ExperiencesForm = () => {
-	const [socials, updateSocials] = React.useState("");
-	const [details, updateDetails] = React.useState("");
+	const [socials, setSocials] = React.useState("");
+	const [details, setDetails] = React.useState("");
+	const [rating, setRating] = React.useState("");
+	const [tags, setTags] = React.useState({});
+
+	const { id } = useParams();
 
 	return (
 		<Container>
-			<FormCont>
+			<FormCont
+				onSubmit={event => {
+					event.preventDefault();
+					fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/experiences`, {
+						method: "POST",
+						body: JSON.stringify({
+							socials,
+							details,
+							rating,
+							tags,
+						}),
+						headers: { "Content-Type": "application/json" },
+					});
+				}}>
 				<Label>
 					{" "}
 					Instagram Handle@:
 					<Input
 						onChange={event => {
-							updateSocials(event.target.value);
+							setSocials(event.target.value);
 						}}
 						value={socials}
 						type="text"></Input>
@@ -24,30 +50,105 @@ const ExperiencesForm = () => {
 					Your Experience:
 					<TextArea
 						onChange={event => {
-							updateDetails(event.target.value);
+							setDetails(event.target.value);
 						}}
 						value={details}></TextArea>
 				</Label>
 				<Label>
 					{" "}
-					Instagram Handle@:
+					Overall Experience:
 					<Input
 						onChange={event => {
-							updateSocials(event.target.value);
+							setRating(event.target.value);
 						}}
-						value={socials}
-						type="text"></Input>
+						value={rating}
+						type="number"
+						min="0"
+						max="5"></Input>
 				</Label>
-				<Label>
-					{" "}
-					Instagram Handle@:
-					<Input
-						onChange={event => {
-							updateSocials(event.target.value);
-						}}
-						value={socials}
-						type="text"></Input>
-				</Label>
+				Tag your post!
+				<Fieldset>
+					<CheckboxLabel>
+						Black
+						<CheckboxInput
+							name="black"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Queer
+						<CheckboxInput
+							name="queer"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Trans
+						<CheckboxInput
+							name="trans"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Disabled
+						<CheckboxInput
+							name="disabled"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Neurotypical
+						<CheckboxInput
+							name="neurotypical"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Wheelchair user
+						<CheckboxInput
+							name="wheelchair"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Family-friendly
+						<CheckboxInput
+							name="familt"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+					<CheckboxLabel>
+						Travelling for business
+						<CheckboxInput
+							name="business"
+							onChange={event => {
+								setTags({ ...tags, [event.target.name]: event.target.checked });
+							}}
+							checked={tags.name}
+							type="checkbox"></CheckboxInput>
+					</CheckboxLabel>
+				</Fieldset>
 			</FormCont>
 		</Container>
 	);
@@ -57,5 +158,9 @@ const ExperiencesForm = () => {
 // experience.details,
 // experience.tags,
 // experience.overall_experience,
+
+// let array = Object.keys(obj).filter((item) => {
+// 	if(obj[item]) return item;
+//   });
 
 export default ExperiencesForm;
