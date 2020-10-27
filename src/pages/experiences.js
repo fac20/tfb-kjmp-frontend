@@ -7,14 +7,17 @@ import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams, useLocation, Link } from "react-router-dom";
 
-export default function ExperienceContent() {
+export default function ExperienceContent(props) {
 	const [experiencesData, setExperiencesData] = useState();
 	const { id } = useParams();
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/experiences`)
 			.then(result => result.json())
-			.then(result => setExperiencesData(result))
+			.then(result => {
+				setExperiencesData(result);
+				props.setCountryName(result[0].country_name);
+			})
 			.catch(error => error);
 	}, [id]);
 
@@ -22,7 +25,7 @@ export default function ExperienceContent() {
 
 	return (
 		<>
-			<NavBarTitle />
+			<NavBarTitle countryName={props.countryName} />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start">

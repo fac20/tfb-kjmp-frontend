@@ -15,7 +15,7 @@ export default function LawsCard({ title, content }) {
 				<TextContainer>
 					<Paragraph>{content}</Paragraph>
 				</TextContainer>
-				<Button background="hsl(46, 77%, 68%)">V</Button>
+				{/* <Button background="hsl(46, 77%, 68%)">V</Button> */}
 			</DivContainer>
 		</Container>
 	);

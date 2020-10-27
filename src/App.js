@@ -12,36 +12,70 @@ import ExperiencesForm from "./components/ExperiencesForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
+	const [countryName, setCountryName] = React.useState("");
+
 	return (
 		<>
 			<Router>
 				<Switch>
-					<Route path="/continents/:name/:id/laws" component={Laws} />
-					<Route exact path="/continents" component={Continents} />
-					<Route
-						path="/continents/:name/:id/experiences/shareexperience"
-						component={ExperiencesForm}
-					/>
-					<Route
-						path="/continents/:name/:id/thingstodo"
-						component={ThingsToDo}
-					/>
-					<Route
-						path="/continents/:name/:id/businesses"
-						component={Businesses}
-					/>
-					<Route
-						path="/continents/:name/:id/experiences"
-						component={ExperienceContent}
-					/>
-					<Route path="/continents/:name" children={<Countries />} />
-					<Route path="/test" component={ExperiencesForm} />
-					<Route exact path="/" component={LandingPage} />
+					<Route path="/continents/:name/:id/laws">
+						<Laws countryName={countryName} setCountryName={setCountryName} />
+					</Route>
+
+					<Route exact path="/continents">
+						<Continents />
+					</Route>
+
+					<Route path="/continents/:name/:id/experiences/shareexperience">
+						<ExperiencesForm />
+					</Route>
+
+					<Route path="/continents/:name/:id/thingstodo">
+						{" "}
+						<ThingsToDo
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
+					</Route>
+
+					<Route path="/continents/:name/:id/businesses">
+						<Businesses
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
+					</Route>
+
+					<Route path="/continents/:name/:id/experiences">
+						<ExperienceContent
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
+					</Route>
+
+					<Route path="/continents/:name">
+						<Countries />
+					</Route>
+
+					<Route path="/test">
+						<ExperiencesForm
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
+					</Route>
+
+					<Route exact path="/">
+						<LandingPage />
+					</Route>
 
 					{/* Admin routes  */}
 
-					<Route exact path="/admin" component={AdminDashboard} />
-					<Route path="/admin/login" component={LoginPage} />
+					<Route exact path="/admin">
+						<AdminDashboard />
+					</Route>
+
+					<Route path="/admin/login">
+						<LoginPage />
+					</Route>
 				</Switch>
 			</Router>
 		</>

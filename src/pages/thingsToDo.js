@@ -9,20 +9,23 @@ import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams } from "react-router-dom";
 import ttdimg from "./../images/thingstodo.png";
 
-export default function ThingsToDo() {
+export default function ThingsToDo(props) {
 	const [thingsToDoData, setThingsToDoData] = useState();
 	const { id } = useParams();
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/things_to_do`)
 			.then(result => result.json())
-			.then(result => setThingsToDoData(result))
+			.then(result => {
+				setThingsToDoData(result);
+				props.setCountryName(result[0].country_name);
+			})
 			.catch(error => error);
 	}, [id]);
 
 	return (
 		<>
-			<NavBarTitle />
+			<NavBarTitle countryName={props.countryName} />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center">
