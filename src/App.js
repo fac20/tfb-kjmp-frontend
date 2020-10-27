@@ -7,6 +7,7 @@ import Laws from "./pages/laws.js";
 import Countries from "./pages/countries";
 import Continents from "./pages/continents";
 import AdminDashboard from "./pages/admin/adminDashboard";
+import ExperiencesForm from "./components/ExperiencesForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 						component={Experiences}
 					/>
 					<Route path="/continents/:name" children={<Countries />} />
+					<Route path="/test" component={ExperiencesForm} />
 					<Route exact path="/" component={LandingPage} />
 
 					{/* Admin routes  */}
