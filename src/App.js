@@ -19,6 +19,10 @@ function App() {
 					<Route path="/continents/:name/:id/laws" component={Laws} />
 					<Route exact path="/continents" component={Continents} />
 					<Route
+						path="/continents/:name/:id/experiences/shareexperience"
+						component={ExperiencesForm}
+					/>
+					<Route
 						path="/continents/:name/:id/thingstodo"
 						component={ThingsToDo}
 					/>

@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from "react";
 import { Container } from "./../styled-components/Containers";
+import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 
 function ExperienceContent() {
 	const [experiencesData, setExperiencesData] = useState();
@@ -16,12 +17,17 @@ function ExperienceContent() {
 			.catch(error => error);
 	}, [id]);
 
+	const url = useLocation().pathname;
+
 	return (
 		<>
 			<NavBarTitle />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start">
+					<Link to={`${url}/shareexperience`}>
+						<Button>Add Your own</Button>
+					</Link>
 					{experiencesData
 						? experiencesData.map(
 								({
@@ -30,8 +36,10 @@ function ExperienceContent() {
 									tags,
 									overall_experience,
 									created_at,
+									id,
 								}) => (
 									<ExperiencesCard
+										key={id}
 										socials={socials}
 										details={details}
 										tags={tags}

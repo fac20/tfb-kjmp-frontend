@@ -33,38 +33,34 @@ export default function ExperiencesCard({
 	seconds -= minutes * 60;
 
 	return (
-		<>
-			<DivContainer>
-				<Image
-					src={smileyIcon[overall_experience]}
-					alt="random"
-					className="whatever"
-					width="3vw"
-				/>
-				<TextContainer>
-					<Paragraph width="25vw">{details}</Paragraph>
-				</TextContainer>
-				<p>{socials}</p>
-				<p>
-					Posted{" "}
-					{(days && (days === 1 ? days + " day" : days + " days")) ||
-						(hours && (hours === 1 ? hours + " hour" : hours + " hours")) ||
-						(minutes &&
-							(minutes === 1 ? minutes + " minute" : minutes + " minutes")) ||
-						(seconds &&
-							(seconds === 1
-								? seconds + " second"
-								: seconds + " seconds"))}{" "}
-					ago
-				</p>
-				<RowResponsive>
-					{tags
-						? tags.map(tag => (
-								<Button background="hsl(46, 77%, 68%)">#{tag}</Button>
-						  ))
-						: null}
-				</RowResponsive>
-			</DivContainer>
-		</>
+		<DivContainer>
+			<Image
+				src={smileyIcon[overall_experience]}
+				alt="random"
+				className="whatever"
+				width="3vw"
+			/>
+			<TextContainer>
+				<Paragraph width="25vw">{details}</Paragraph>
+			</TextContainer>
+			<p>{socials}</p>
+			<p>
+				Posted{" "}
+				{(days && (days === 1 ? days + " day" : days + " days")) ||
+					(hours && (hours === 1 ? hours + " hour" : hours + " hours")) ||
+					(minutes &&
+						(minutes === 1 ? minutes + " minute" : minutes + " minutes")) ||
+					(seconds &&
+						(seconds === 1 ? seconds + " second" : seconds + " seconds"))}{" "}
+				ago
+			</p>
+			<RowResponsive>
+				{tags
+					? tags.map(tag => (
+							<Button background="hsl(46, 77%, 68%)">#{tag}</Button>
+					  ))
+					: null}
+			</RowResponsive>
+		</DivContainer>
 	);
 }
