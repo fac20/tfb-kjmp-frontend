@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { useState } from "react";
 
 import { Container } from "./../styled-components/Containers";
+import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
@@ -27,7 +28,9 @@ function ExperienceContent() {
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start">
-					<Link to={`${url}/shareexperience`}>ADD YOUR OWN</Link>
+					<Link to={`${url}/shareexperience`}>
+						<Button>Add Your own</Button>
+					</Link>
 					{experiencesData
 						? experiencesData.map(
 								({
@@ -36,8 +39,10 @@ function ExperienceContent() {
 									tags,
 									overall_experience,
 									created_at,
+									id,
 								}) => (
 									<ExperiencesCard
+										key={id}
 										socials={socials}
 										details={details}
 										tags={tags}

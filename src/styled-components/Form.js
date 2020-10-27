@@ -80,6 +80,20 @@ const TextArea = styled.textarea`
 	font-family: "Anonymous Pro", monospace;
 `;
 
+const SubmitMessage = styled.h1`
+	margin: auto;
+	display: block;
+	padding-top: 15rem;
+`;
+
+const SubmitContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+`;
+
 export {
 	FormCont,
 	Label,
@@ -88,4 +102,6 @@ export {
 	TextArea,
 	CheckboxLabel,
 	Fieldset,
+	SubmitMessage,
+	SubmitContainer,
 };
