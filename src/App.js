@@ -6,6 +6,7 @@ import Experiences from "./pages/experiences.js";
 import Laws from "./pages/laws.js";
 import Countries from "./pages/countries";
 import Continents from "./pages/continents";
+import AdminDashboard from "./pages/admin/adminDashboard";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -14,8 +15,7 @@ function App() {
 			<Router>
 				<Switch>
 					<Route path="/continents/:name/:id/laws" component={Laws} />
-					<Route exact path="/continents" component={Continents} />{" "}
-					{/* map of world */}
+					<Route exact path="/continents" component={Continents} />
 					<Route
 						path="/continents/:name/:id/thingstodo"
 						component={ThingsToDo}
@@ -30,6 +30,10 @@ function App() {
 					/>
 					<Route path="/continents/:name" children={<Countries />} />
 					<Route exact path="/" component={LandingPage} />
+
+					{/* Admin routes  */}
+
+					<Route exact path="/admin" component={AdminDashboard} />
 				</Switch>
 			</Router>
 		</>

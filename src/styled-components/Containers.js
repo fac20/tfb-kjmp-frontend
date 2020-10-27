@@ -16,11 +16,14 @@ export const Container = styled.div`
 	/* border: solid red 3px; */
 	display: flex;
 	justify-content: ${props => props.justify};
-	align-items: ${props => props.align};
+	align-items: center;
 	flex-wrap: wrap;
+	//79vw
 	width: 79vw;
 	background: ${props => props.back};
 	padding-top: ${props => props.padTop};
+	border: ${props => props.border};
+	border-radius: ${props => props.radius};
 `;
 
 export const DivContainer = styled.div`
@@ -34,3 +37,8 @@ export const DivContainer = styled.div`
 	background: #ffffff;
 	box-shadow: 7px 10px #000000;
 `;
+
+// Container hierarchy:
+// container
+// div container
+// text container

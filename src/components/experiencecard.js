@@ -4,7 +4,7 @@ import { TextContainer, DivContainer } from "../styled-components/Containers";
 import Image from "../styled-components/Img";
 import Paragraph from "./../styled-components/Paragraph";
 import {
-	ColumnResponsive,
+	// ColumnResponsive,
 	RowResponsive,
 } from "./../styled-components/Responsive";
 
