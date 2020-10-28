@@ -12,8 +12,8 @@ export default function LandingPage() {
 				<Link to="/continents">
 					<Img src={logo} width="55vw" />
 				</Link>
-				<Button>Enter</Button>
 			</Container>
+			{/* <Button>Enter</Button> */}
 		</>
 	);
 }

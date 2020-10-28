@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import img from "./../images/form-back.svg";
+// import img from "./../images/form-back.svg";
 
 const FormCont = styled.form`
-	background-image: url(${img});
+	background: hsl(188, 13%, 45%);
 	background-size: 60vh;
-	width: 30vw;
-	height: 80vh;
-	margin: auto;
+	/* margin-left: 15rem; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,10 +31,19 @@ const Label = styled.label`
 	font-size: 1.3rem;
 	font-weight: 800px;
 	cursor: pointer;
-	border-bottom: hsl(31, 95%, 84%) solid 7px;
+	padding: 1rem 3rem;
+	border-top: hsl(31, 95%, 84%) solid 4px;
+	background: hsl(188, 13%, 45%);
+	border-radius: 5px;
+	margin-top: 3rem;
+	color: ${props => props.color || "hsl(188, 13%, 45%)"};
+	@media all and (max-width: 411px) {
+		font-size: 15px;
+	}
 `;
 
 const CheckboxLabel = styled.label`
+	color: ${props => props.color || "hsl(31, 95%, 84%)"};
 	font-size: 1.5rem;
 	padding: 0.2rem;
 	display: flex;
@@ -47,6 +54,7 @@ const Fieldset = styled.fieldset`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	margin-top: 1rem;
+	margin-left: 5rem;
 	border: none;
 `;
 
@@ -56,14 +64,16 @@ const Input = styled.input`
 	width: 80%;
 	height: 4vh;
 	border-radius: 20px;
-	background: hsl(31, 95%, 84%);
+	background: transparent;
 	font-size: 2rem;
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
+	padding: 1.5rem 0.5rem;
+	color: hsl(31, 95%, 84%);
 `;
 
 const CheckboxInput = styled.input`
-	margin-left: 0.1rem;
+	margin-left: 14rem;
 	height: 1.3rem;
 	width: 1.3rem;
 `;
@@ -74,10 +84,11 @@ const TextArea = styled.textarea`
 	width: 80%;
 	height: 12vh;
 	border-radius: 20px;
-	background: hsl(31, 95%, 84%);
+	background: transparent;
 	font-size: 2rem;
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
+	color: hsl(31, 95%, 84%);
 `;
 
 const SubmitMessage = styled.h1`

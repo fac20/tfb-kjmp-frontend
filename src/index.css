@@ -48,7 +48,8 @@ body {
 	margin-left: 2rem;
 }
 
-.links {
+.links,
+a {
 	text-decoration: none;
 	color: black;
 }
@@ -93,5 +94,11 @@ a:hover {
 
 .title-link {
 	text-decoration: none;
+	color: black;
+}
+#country-title {
+	color: hsl(341, 73%, 72%);
+}
+#country-title:hover {
 	color: black;
 }

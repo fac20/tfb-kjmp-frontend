@@ -51,8 +51,11 @@ export default function Countries() {
 					width="45vw"
 					height="75vh"
 					className="countries"
-					border="black solid 3px">
+					border="black solid 3px"
+					overflow="scroll"
+					media="75vw">
 					<RowResponsive width=" 40vw">
+						{data === [] ? <h1>LOADING...</h1> : null}
 						{data
 							? data.map(data => (
 									<div key={data.id}>
