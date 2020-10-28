@@ -41,9 +41,9 @@ export default function ExperiencesCard({
 				width="3vw"
 			/>
 			<TextContainer>
-				<Paragraph width="25vw">{details}</Paragraph>
+				<Paragraph width="25vw">Details:{details}</Paragraph>
 			</TextContainer>
-			<p>{socials}</p>
+			<p>Socials:{socials}</p>
 			<p>
 				Posted{" "}
 				{(days && (days === 1 ? days + " day" : days + " days")) ||

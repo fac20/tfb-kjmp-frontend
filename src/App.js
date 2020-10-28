@@ -9,6 +9,7 @@ import Countries from "./pages/countries";
 import Continents from "./pages/continents";
 import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
+import ThingsToDoForm from "./components/thingsToDoForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -36,6 +37,12 @@ function App() {
 					<Route path="/continents/:name/:id/thingstodo">
 						{" "}
 						<ThingsToDo
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
+					</Route>
+					<Route path="/continents/:name/:id/thingstodo/sharethingstodo">
+						<ThingsToDoForm
 							countryName={countryName}
 							setCountryName={setCountryName}
 						/>

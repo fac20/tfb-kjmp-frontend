@@ -14,9 +14,9 @@ import { Container } from "../styled-components/Containers";
 import { useParams, useHistory } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Button from "../styled-components/Button";
-import { ColumnResponsive } from "../styled-components/Responsive";
-import { NavBarSide, NavBarTitle } from "./../components/navbar";
-import QuickExitButton from "./../components/exitButton";
+// import { ColumnResponsive } from "../styled-components/Responsive";
+import { NavBarTitle } from "./navbar";
+import QuickExitButton from "./exitButton";
 
 const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");
