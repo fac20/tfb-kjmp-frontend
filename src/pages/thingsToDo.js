@@ -22,7 +22,7 @@ export default function ThingsToDo(props) {
 				props.setCountryName(result[0].country_name);
 			})
 			.catch(error => error);
-	}, [id]);
+	}, [id, props]);
 
 	return (
 		<>
@@ -32,19 +32,9 @@ export default function ThingsToDo(props) {
 				<NavBarSide />
 				<Container justify="center">
 					{thingsToDoData ? (
-						thingsToDoData.map(
-							({ name, details, date_time, location, created_at, id }) => (
-								<ThingsToDoCard
-									key={id}
-									src={ttdimg}
-									name={name}
-									details={details}
-									date_time={date_time}
-									location={location}
-									created_at={created_at}
-								/>
-							),
-						)
+						thingsToDoData.map(thing => (
+							<ThingsToDoCard key={thing.id} src={ttdimg} {...thing} />
+						))
 					) : (
 						<h1>No Information Yet.....</h1>
 					)}

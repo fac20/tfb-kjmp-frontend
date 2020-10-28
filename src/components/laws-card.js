@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "../styled-components/Button";
+import Button from "styled-components/Button";
 import {
 	TextContainer,
 	DivContainer,
 	Container,
-} from "../styled-components/Containers";
-import Paragraph from "./../styled-components/Paragraph";
+} from "styled-components/Containers";
+import Paragraph from "styled-components/Paragraph";
 
 export default function LawsCard({ title, content }) {
 	return (

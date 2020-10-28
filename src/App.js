@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import LandingPage from "./pages/landing.js";
 import Businesses from "./pages/businesses.js";
 import LoginPage from "./pages/login.js";
@@ -11,11 +11,18 @@ import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import ROUTES from "./routes";
+
+export const AppContext = createContext();
+
+export const useAppContext = () => useContext(AppContext);
+
 function App() {
-	const [countryName, setCountryName] = React.useState("");
+	const [countryName, setCountryName] = useState("");
+	const [searchString, setSearchString] = useState("");
 
 	return (
-		<>
+		<AppContext.Provider value={{ countryName, searchString, setSearchString }}>
 			<Router>
 				<Switch>
 					<Route path="/continents/:name/:id/laws">
@@ -55,7 +62,7 @@ function App() {
 						/>
 					</Route>
 
-					<Route path="/continents/:name">
+					<Route path={ROUTES.COUNTRIES}>
 						<Countries />
 					</Route>
 
@@ -81,7 +88,7 @@ function App() {
 					</Route>
 				</Switch>
 			</Router>
-		</>
+		</AppContext.Provider>
 	);
 }
 

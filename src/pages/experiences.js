@@ -7,6 +7,9 @@ import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams, useLocation, Link } from "react-router-dom";
 import QuickExitButton from "./../components/exitButton";
+import { filter } from "cypress/types/bluebird";
+
+import { useAppContext } from "../App";
 
 export default function ExperienceContent(props) {
 	const [experiencesData, setExperiencesData] = useState();
@@ -20,9 +23,15 @@ export default function ExperienceContent(props) {
 				props.setCountryName(result[0].country_name);
 			})
 			.catch(error => error);
-	}, [id]);
+	}, [id, props]);
 
 	const url = useLocation().pathname;
+
+	const { searchString } = useAppContext();
+
+	const filteredExperiences = !searchString
+		? experiencesData
+		: experiencesData.filter(experience => ({})); // filter using search string and experience.tags
 
 	return (
 		<>
@@ -37,26 +46,9 @@ export default function ExperienceContent(props) {
 						</Button>
 					</Link>
 					{experiencesData
-						? experiencesData.map(
-								({
-									socials,
-									details,
-									tags,
-									overall_experience,
-									created_at,
-									id,
-								}) => (
-									<ExperiencesCard
-										key={id}
-										socials={socials}
-										details={details}
-										tags={tags}
-										overall_experience={overall_experience}
-										created_at={created_at}
-										width="5vw"
-									/>
-								),
-						  )
+						? filteredExperiences.map(({ id, foo, ...rest }) => (
+								<ExperiencesCard key={id} width="5vw" {...rest} />
+						  ))
 						: null}
 				</Container>
 			</RowResponsive>

@@ -9,10 +9,13 @@ export default function NavList() {
 	path.pop();
 	let joinPath = path.join("/");
 	console.log(joinPath);
+
+	const { name, id } = useParams();
+
 	return (
 		<>
 			<ul>
-				<Link to={`${joinPath}/laws`}>
+				<Link to={getLawsLink(name, id)}>
 					<List>
 						<Button>LAWS</Button>
 					</List>

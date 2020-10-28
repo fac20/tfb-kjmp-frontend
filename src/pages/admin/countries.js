@@ -1,15 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Img from "./../components/img";
-import geotag from "./../images/geotag.svg";
-import QuickExitButton from "./../components/exitButton";
-import {
-	ColumnResponsive,
-	RowResponsive,
-} from "./../styled-components/Responsive";
-import { NavBarTitle } from "./../components/navbar";
+import Img from "components/img";
+import geotag from "images/geotag.svg";
+import QuickExitButton from "components/exitButton";
+import { ColumnResponsive, RowResponsive } from "styled-components/Responsive";
+import { NavBarTitle } from "components/navbar";
 import { Link, useParams, useRouteMatch } from "react-router-dom";
-import { FlexCont, Container } from "./../styled-components/Containers";
+import { FlexCont, Container } from "styled-components/Containers";
 import styled, { keyframes } from "styled-components";
 import { tada } from "react-animations";
 
@@ -23,13 +20,24 @@ const TadaDiv = styled.div`
 	cursor: pointer;
 `;
 
+const makeRequest = endpoint => {
+	const baseURL =
+		process.env.NODE_ENV === "production"
+			? "https://tfb-bqtg.herokuapp.com"
+			: "http://localhost:4000";
+
+	const fullURL = `${baseURL}/${endpoint}`;
+
+	return fetch(fullURL);
+};
+
 export default function Countries() {
 	const [data, setData] = useState([]);
 	let { name } = useParams();
 	let { url, path } = useRouteMatch();
 
 	useEffect(() => {
-		fetch("https://tfb-bqtg.herokuapp.com/countries")
+		makeRequest("countries")
 			.then(result => result.json())
 			.then(result => {
 				console.log(result);
@@ -40,7 +48,7 @@ export default function Countries() {
 				setData(correctCountries);
 			})
 			.catch(error => error);
-	}, []);
+	}, [name]);
 
 	return (
 		<>

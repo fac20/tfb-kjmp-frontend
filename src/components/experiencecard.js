@@ -1,3 +1,4 @@
+import { differenceInMinutes, format } from "date-fns";
 import React from "react";
 import Button from "../styled-components/Button";
 import { TextContainer, DivContainer } from "../styled-components/Containers";
@@ -31,6 +32,9 @@ export default function ExperiencesCard({
 	seconds -= hours * 3600;
 	const minutes = Math.floor(seconds / 60);
 	seconds -= minutes * 60;
+
+	const diff = differenceInMinutes(dateNow, created_at);
+	const postedAt = format(diff, "ddd days, hhh hours, mm minutes, ss seconds");
 
 	return (
 		<DivContainer>

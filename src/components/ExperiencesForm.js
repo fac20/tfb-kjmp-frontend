@@ -49,6 +49,23 @@ const ExperiencesForm = props => {
 		}).then(data => setSubmitted(true));
 	};
 
+	const renderCheckboxes = () => {
+		const fields = ["black", "queer"];
+
+		return fields.map(field => (
+			<>
+				<CheckboxLabel htmlFor={field}>{field.capitalize()}</CheckboxLabel>
+				/CheckboxLabel>
+				<CheckboxInput
+					id={field}
+					name={field}
+					onChange={handleCheckbox}
+					checked={tags.name}
+					type="checkbox"></CheckboxInput>
+			</>
+		));
+	};
+
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
