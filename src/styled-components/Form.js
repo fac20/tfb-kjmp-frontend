@@ -51,12 +51,12 @@ const Fieldset = styled.fieldset`
 `;
 
 const Input = styled.input`
-	border: hsl(188, 13%, 45%) 3px solid;
+	border: hsl(31, 95%, 84%) 3px solid;
 	margin: 0.5rem 0 2rem 0;
 	width: 80%;
 	height: 4vh;
 	border-radius: 20px;
-	background: hsl(188, 13%, 45%);
+	background: hsl(31, 95%, 84%);
 	font-size: 2rem;
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
@@ -69,12 +69,12 @@ const CheckboxInput = styled.input`
 `;
 
 const TextArea = styled.textarea`
-	border: hsl(188, 13%, 45%) 3px solid;
+	border: hsl(31, 95%, 84%) 3px solid;
 	margin: 0.5rem 0 2rem 0;
 	width: 80%;
 	height: 12vh;
 	border-radius: 20px;
-	background: hsl(188, 13%, 45%);
+	background: hsl(31, 95%, 84%);
 	font-size: 2rem;
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;

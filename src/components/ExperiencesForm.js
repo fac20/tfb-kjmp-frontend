@@ -83,7 +83,7 @@ const ExperiencesForm = props => {
 							count={5}
 							onChange={newRating => setRating(newRating)}
 							size={72}
-							activeColor="#ffd700"
+							activeColor="hsl(31, 95%, 84%)"
 						/>
 
 						<Label htmlFor="tags">Tag your post!</Label>

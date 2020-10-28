@@ -27,7 +27,10 @@ function App() {
 					</Route>
 
 					<Route path="/continents/:name/:id/experiences/shareexperience">
-						<ExperiencesForm />
+						<ExperiencesForm
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
 					</Route>
 
 					<Route path="/continents/:name/:id/thingstodo">

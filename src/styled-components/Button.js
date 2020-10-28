@@ -9,6 +9,7 @@ export default styled.button`
 	margin: 0.9rem 0.9rem;
 	padding: 0.2rem;
 	font-family: "Anonymous Pro", monospace;
+	cursor: pointer;
 	@media all and (max-width: 938px) {
 		font-size: 10px;
 	}
