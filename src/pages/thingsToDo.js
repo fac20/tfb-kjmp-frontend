@@ -8,6 +8,7 @@ import {
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams } from "react-router-dom";
 import ttdimg from "./../images/thingstodo.png";
+import QuickExitButton from "./../components/exitButton";
 
 export default function ThingsToDo(props) {
 	const [thingsToDoData, setThingsToDoData] = useState();
@@ -26,6 +27,7 @@ export default function ThingsToDo(props) {
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
+			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center">

@@ -16,6 +16,7 @@ import ReactStars from "react-rating-stars-component";
 import Button from "../styled-components/Button";
 import { ColumnResponsive } from "../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
+import QuickExitButton from "./../components/exitButton";
 
 const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");
@@ -51,7 +52,7 @@ const ExperiencesForm = props => {
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
-
+			<QuickExitButton />
 			{submitted ? (
 				<SubmitContainer>
 					<SubmitMessage>Thank you for your submission</SubmitMessage>

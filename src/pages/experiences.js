@@ -6,6 +6,7 @@ import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import { useParams, useLocation, Link } from "react-router-dom";
+import QuickExitButton from "./../components/exitButton";
 
 export default function ExperienceContent(props) {
 	const [experiencesData, setExperiencesData] = useState();
@@ -26,6 +27,7 @@ export default function ExperienceContent(props) {
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
+			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start">

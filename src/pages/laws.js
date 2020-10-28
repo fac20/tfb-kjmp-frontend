@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import QuickExitButton from "./../components/exitButton";
 import { useParams } from "react-router-dom";
 import { Container } from "./../styled-components/Containers";
 import LawsCard from "./../components/laws-card";
@@ -24,6 +24,7 @@ export default function Laws(props) {
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
+			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start" padTop="0">
