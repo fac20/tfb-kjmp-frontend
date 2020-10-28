@@ -18,8 +18,7 @@ export const Container = styled.div`
 	justify-content: ${props => props.justify};
 	align-items: center;
 	flex-wrap: wrap;
-	//79vw
-	width: 79vw;
+	width: ${props => props.width || "79vw"};
 	background: ${props => props.back};
 	padding-top: ${props => props.padTop};
 	border: ${props => props.border};
@@ -51,9 +50,13 @@ export const FlexCont = styled.div`
 	padding: 0.5rem;
 	border: ${props => props.border};
 	border-radius: ${props => props.radius};
-	/* background: #ffffff; */
+	overflow: ${props => props.overflow};
 	box-shadow: 7px 10px #000000;
 	margin: 2rem;
+
+	@media all and (max-width: 768px) {
+		width: ${props => props.media};
+	}
 `;
 
 // Container hierarchy:

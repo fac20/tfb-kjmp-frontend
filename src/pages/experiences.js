@@ -32,7 +32,9 @@ export default function ExperienceContent(props) {
 				<NavBarSide />
 				<Container justify="center" align="flex-start">
 					<Link to={`${url}/shareexperience`}>
-						<Button>Add Your own</Button>
+						<Button width="15vw" left="-15vw" medialeft="0vw">
+							Add Your own
+						</Button>
 					</Link>
 					{experiencesData
 						? experiencesData.map(

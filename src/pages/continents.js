@@ -33,7 +33,12 @@ export default function Continents() {
 		<>
 			<NavBarTitle />
 			<QuickExitButton />
-			<FlexCont width="50vw" height="70vh" back={background}>
+			<FlexCont
+				width="50vw"
+				height="70vh"
+				back={background}
+				overflow="scroll"
+				media="75vw">
 				{continentsArray.map(pair => {
 					return (
 						<>

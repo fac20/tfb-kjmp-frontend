@@ -43,7 +43,10 @@ export function NavBarTitle({ countryName }) {
 						<h1 className="title">THE BLACK QUEER TRAVEL GUIDE</h1>
 					</Link>
 					{continentName ? (
-						<Link to={`/continents/${continentName}`} className="title-link">
+						<Link
+							to={`/continents/${continentName}`}
+							className="title-link"
+							id="country-title">
 							<h2 className="title">{continentsObject[continentName]}</h2>
 						</Link>
 					) : null}

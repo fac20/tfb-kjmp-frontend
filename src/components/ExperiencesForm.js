@@ -59,35 +59,44 @@ const ExperiencesForm = props => {
 					<Button onClick={() => history.goBack()}>Back to Experiences</Button>
 				</SubmitContainer>
 			) : (
-				<Container>
+				<Container justify="center" align="center" width="100vw">
 					<FormCont onSubmit={handleSubmit}>
-						<Label htmlFor="socials">Instagram Handle@:</Label>
+						<Label htmlFor="socials" color="hsl(31, 95%, 84%)">
+							Instagram Handle @:
+						</Label>
 						<Input
-							id="socials"
+							name="socials"
 							onChange={event => {
 								setSocials(event.target.value);
 							}}
 							value={socials}
 							type="text"></Input>
 
-						<Label htmlFor="details">Your Experience:</Label>
+						<Label htmlFor="details" color="hsl(31, 95%, 84%)">
+							Your Experience:
+						</Label>
 						<TextArea
-							id="details"
+							name="details"
 							onChange={event => {
 								setDetails(event.target.value);
 							}}
 							value={details}></TextArea>
 
-						<Label htmlFor="rating">Overall Experience:</Label>
+						<Label htmlFor="rating" color="hsl(31, 95%, 84%)">
+							Overall Experience:
+						</Label>
 						<ReactStars
 							id="rating"
 							count={5}
 							onChange={newRating => setRating(newRating)}
 							size={72}
 							activeColor="hsl(31, 95%, 84%)"
+							color="hsl(35, 67%, 96%)"
 						/>
 
-						<Label htmlFor="tags">Tag your post!</Label>
+						<Label htmlFor="tags" color="hsl(31, 95%, 84%)">
+							Tag your post!
+						</Label>
 
 						<Fieldset id="tags">
 							<CheckboxLabel htmlFor="black">Black</CheckboxLabel>
@@ -160,7 +169,9 @@ const ExperiencesForm = props => {
 								checked={tags.name}
 								type="checkbox"></CheckboxInput>
 						</Fieldset>
-						<Button>Submit</Button>
+						<Button fontsize="1.5vw" height="7vh" width="7vw">
+							Submit
+						</Button>
 					</FormCont>
 				</Container>
 			)}
