@@ -1,6 +1,7 @@
 # tfb-kjmp-frontend
-
+<p align="center">
 <img src="https://user-images.githubusercontent.com/38657014/97605574-b5f83280-1a06-11eb-832f-606612536a30.png" width="500" height="500"/>
+</p> 
 
 
 
