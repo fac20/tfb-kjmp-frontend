@@ -5,7 +5,7 @@ const QuickExitButton = ({ setExit }) => {
 	return (
 		<ExitButton>
 			<a href="http://bbciplayer.com" target="_blank" rel="noopener noreferrer">
-				Quick Exit
+				Exit Page →
 			</a>
 		</ExitButton>
 	);

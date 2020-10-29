@@ -88,7 +88,15 @@ const TextArea = styled.textarea`
 	font-size: 2rem;
 	font-weight: 800px;
 	font-family: "Anonymous Pro", monospace;
+	text-align: center;
+	padding-top: 0.9rem;
 	color: hsl(31, 95%, 84%);
+	&::placeholder {
+		color: hsl(31, 95%, 84%);
+		text-align: center;
+		opacity: 0.5;
+		padding-top: 0.9rem;
+	}
 `;
 
 const SubmitMessage = styled.h1`

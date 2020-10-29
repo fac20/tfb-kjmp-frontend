@@ -102,3 +102,9 @@ a:hover {
 #country-title:hover {
 	color: black;
 }
+
+p {
+	margin: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+}

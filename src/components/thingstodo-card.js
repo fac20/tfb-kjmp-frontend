@@ -30,10 +30,13 @@ export default function ThingsToDoCard({
 				<Image src={src} alt="random" className="whatever" width="20vw" />
 				<h1>{name}</h1>
 				<TextContainer>
-					<Paragraph>{details}</Paragraph>
+					<Paragraph>Details:{details}</Paragraph>
 				</TextContainer>
-				<p>{date_time}</p>
-				<p>{location}</p>
+				<p>
+					Date of Event:
+					{date_time}
+				</p>
+				<p>Location:{location}</p>
 				<p>
 					Posted{" "}
 					{(days && (days === 1 ? days + " day" : days + " days")) ||
