@@ -6,16 +6,18 @@ import { useState, useEffect } from "react";
 function loginSubmit(username, password) {
 	return (
 		fetch("https://tfb-bqtg.herokuapp.com/admin", {
+			method: "POST",
+			withCredentials: true,
 			headers: {
 				"content-type": "application/JSON",
 			},
-			method: "POST",
 			body: JSON.stringify({
 				username: username,
 				password: password,
 			}),
 		})
-			.then(result => result.body)
+			.then(result => result.json())
+			.then(response => localStorage.setItem("access-token", response.token))
 			// () => window.localStorage.setItem("access token", "you're logged in"),
 			.catch(error => error)
 	);

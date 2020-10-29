@@ -13,6 +13,9 @@ export default function LandingPage() {
 					<Img src={logo} width="55vw" />
 				</Link>
 			</Container>
+			<footer>
+				<Link to="/admin/login">Admin</Link>
+			</footer>
 			{/* <Button>Enter</Button> */}
 		</>
 	);
