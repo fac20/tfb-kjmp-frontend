@@ -7,7 +7,7 @@
 
 ## Project overview
 
-An app created to inform and inspire Black queer travellers to see the world safely and connect with their people. 
+An app created to inspire Black queer travellers to see the world safely and connect with people everywhere. 
 Allows users to input user data from a postgres database using an RESTful API built in Express, and also features data input by our Product Owner via an Airtable database. 
 
 ## The team
