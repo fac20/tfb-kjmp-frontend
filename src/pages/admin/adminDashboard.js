@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+
 import { Container } from "../../styled-components/Containers";
 import { RowResponsive } from "../../styled-components/Responsive";
 import { NavBarTitle } from "../../components/navbar";
-import ExperiencesAdmin from "../../components/experiencesAdmin";
-
+import ExperiencesAdmin from "../../components/AdminExperiences";
+import ThingsToDoAdmin from "../../components/AdminThingsToDo";
 import { DivContainer } from "../../styled-components/Containers";
-
-import AdminNavBar from "../../components/adminNavBar";
+import AdminNavBar from "../../components/AdminNavBar";
 
 export default function AdminDashboard() {
-	const [page, setPage] = useState([""]);
+	const [page, setPage] = useState("");
 
-	console.log(page);
+	const renderPage = page => {
+		if (page === "experiences") return <ExperiencesAdmin />;
+		if (page === "thingstodo") return <ThingsToDoAdmin />;
+	};
 
 	return (
 		<div class="admindash">
@@ -19,10 +22,7 @@ export default function AdminDashboard() {
 			<RowResponsive>
 				<AdminNavBar setPage={setPage} />
 				<Container justify="center" align="flex-start">
-					<DivContainer>
-						<ExperiencesAdmin />
-						{/* {page === "thingstodo" ? <ThingsToDoAdmin /> : null} */}
-					</DivContainer>
+					<DivContainer>{renderPage(page)}</DivContainer>
 				</Container>
 			</RowResponsive>
 		</div>

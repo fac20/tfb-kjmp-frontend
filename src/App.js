@@ -66,7 +66,7 @@ function App() {
 					<Route exact path="/admin/login">
 						<LoginPage />
 					</Route>
-					<Route exact path="/admin/:table">
+					<Route exact path="/admin/">
 						<AdminDashboard />
 					</Route>
 				</Switch>

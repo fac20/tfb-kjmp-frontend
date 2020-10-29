@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
-import ExperiencesAdminCard from "./experiences-admin-card";
+import ExperiencesAdminCard from "./AdminExperienceCard";
 import { Container } from "../styled-components/Containers";
 import { RowResponsive } from "../styled-components/Responsive";
 
 export default function ExperiencesAdmin() {
 	const [experiencesPosts, setExperiencesPosts] = useState([]);
-	const { table } = useParams();
+	const [updated, setUpdated] = useState(true);
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`, {
@@ -21,17 +20,18 @@ export default function ExperiencesAdmin() {
 				console.log(result);
 			})
 			.catch(error => error);
-	}, []); // why [table]?
+	}, [updated]);
 
 	return (
 		<>
 			<Container justify="center" align="center">
+				<p>There are {experiencesPosts.length} posts to approve</p>
 				<RowResponsive>
-					{experiencesPosts && table === "experiences" ? (
+					{experiencesPosts ? (
 						experiencesPosts.map(
 							({
 								id,
-								country_id,
+								country_name,
 								socials,
 								details,
 								tags,
@@ -39,8 +39,10 @@ export default function ExperiencesAdmin() {
 								created_at,
 							}) => (
 								<ExperiencesAdminCard
+									setUpdated={setUpdated}
 									key={id}
-									country_id={country_id}
+									id={id}
+									country_name={country_name}
 									socials={socials}
 									details={details}
 									tags={tags}
@@ -57,12 +59,3 @@ export default function ExperiencesAdmin() {
 		</>
 	);
 }
-
-// id SERIAL PRIMARY KEY,
-// country_id INTEGER REFERENCES countries(id),
-// socials TEXT,
-// details TEXT,
-// tags text[],
-// overall_experience INTEGER,
-// approved BOOL DEFAULT FALSE,
-// created_at timestamp NOT NULL DEFAULT NOW()
