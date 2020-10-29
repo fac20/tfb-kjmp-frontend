@@ -29,7 +29,7 @@ export default function ExperienceContent(props) {
 			<NavBarTitle countryName={props.countryName} />
 			<QuickExitButton />
 			<RowResponsive>
-				<NavBarSide />
+				<NavBarSide countryName={props.countryName} />
 				<Container justify="center" align="flex-start">
 					<Link to={`${url}/shareexperience`}>
 						<Button width="15vw" left="-15vw" medialeft="0vw">
