@@ -10,11 +10,18 @@ export default function ExperiencesAdmin() {
 	const { table } = useParams();
 
 	useEffect(() => {
-		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`)
+		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`, {
+			headers: {
+				authorization: `Bearer ${localStorage.getItem("access-token")}`,
+			},
+		})
 			.then(result => result.json())
-			.then(result => setExperiencesPosts(result))
+			.then(result => {
+				setExperiencesPosts(result);
+				console.log(result);
+			})
 			.catch(error => error);
-	}, [table]); // why [table]?
+	}, []); // why [table]?
 
 	return (
 		<>
