@@ -21,6 +21,14 @@ export default function Laws(props) {
 			.catch(error => error);
 	}, [id]);
 
+	function renderLawCards() {
+		if (!lawData) return <h1>No Information Yet.....</h1>;
+		return Object.keys(lawData).map(key => {
+			if (key === "id" || key === "Country") return null;
+			return <LawsCard title={key} content={lawData[key]} />;
+		});
+	}
+
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
@@ -28,24 +36,7 @@ export default function Laws(props) {
 			<RowResponsive>
 				<NavBarSide />
 				<Container justify="center" align="flex-start" padTop="0">
-					{lawData ? (
-						<>
-							{lawData.hasOwnProperty("Legislation") ? (
-								<LawsCard title="Legislation" content={lawData.Legislation} />
-							) : null}
-							{lawData.hasOwnProperty("Population") ? (
-								<LawsCard title="Population" content={lawData.Population} />
-							) : null}
-							{lawData.hasOwnProperty("Culture") ? (
-								<LawsCard title="Culture" content={lawData.Culture} />
-							) : null}
-							{lawData.hasOwnProperty("Warnings") ? (
-								<LawsCard title="Warnings" content={lawData.Warnings} />
-							) : null}
-						</>
-					) : (
-						<h1>No Information Yet.....</h1>
-					)}
+					{renderLawCards()}
 				</Container>
 			</RowResponsive>
 		</>

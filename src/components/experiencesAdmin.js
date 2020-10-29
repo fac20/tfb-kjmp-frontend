@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import ExperiencesAdminCard from "./experiences-admin-card";
 import { Container } from "../styled-components/Containers";
 import { RowResponsive } from "../styled-components/Responsive";
-import { useParams } from "react-router-dom";
 
 export default function ExperiencesAdmin() {
 	const [experiencesPosts, setExperiencesPosts] = useState([]);
 	const { table } = useParams();
-	console.log(table);
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`)
