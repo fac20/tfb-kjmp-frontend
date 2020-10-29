@@ -14,7 +14,7 @@ export default function ExperiencesAdminCard(props) {
 					<Paragraph width="40vw">Details: {props.details}</Paragraph>
 				</TextContainer>
 				<p>Socials: {props.socials}</p>
-				<p>Tags: {props.tags}</p>
+				<p>Tags: {props.tags && props.tags.join()}</p>
 				<p>Overall experience rating: {props.overall_experience}</p>
 				<RowResponsive>
 					<AdminApproveButton
