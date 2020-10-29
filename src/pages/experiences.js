@@ -55,6 +55,7 @@ export default function ExperienceContent(props) {
 										id,
 									}) => (
 										<ExperiencesCard
+											setFilterBy={setFilterBy}
 											key={id}
 											socials={socials}
 											details={details}

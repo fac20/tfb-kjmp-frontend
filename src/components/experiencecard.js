@@ -13,12 +13,15 @@ export default function ExperiencesCard({
 	tags,
 	overall_experience,
 	created_at,
+	setFilterBy,
 }) {
 	const timeString = timeSinceCreate(created_at);
 
 	function renderTags() {
 		return tags.map(tag => (
-			<Button background="hsl(46, 77%, 68%)">#{tag}</Button>
+			<Button background="hsl(46, 77%, 68%)" onClick={() => setFilterBy(tag)}>
+				#{tag}
+			</Button>
 		));
 	}
 
