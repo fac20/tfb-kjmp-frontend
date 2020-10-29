@@ -24,6 +24,7 @@ export default function ExperiencesAdmin() {
 	return (
 		<>
 			<Container justify="center" align="center">
+				<p>There are {experiencesPosts.length} posts to approve</p>
 				<RowResponsive>
 					{experiencesPosts ? (
 						experiencesPosts.map(

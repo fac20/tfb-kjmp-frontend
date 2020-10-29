@@ -16,7 +16,6 @@ export default function ThingsToDoAdmin() {
 			.then(result => result.json())
 			.then(result => {
 				setThingsToDoPosts(result);
-				console.log(result);
 			})
 			.catch(error => error);
 	}, []);
@@ -25,9 +24,12 @@ export default function ThingsToDoAdmin() {
 		<>
 			<Container justify="center" align="center">
 				<RowResponsive>
+					<p>There are {thingsToDoPosts.length} posts to approve</p>
+					<br></br>
 					{thingsToDoPosts ? (
 						thingsToDoPosts.map(
 							({
+								id,
 								country_name,
 								name,
 								details,
@@ -36,7 +38,7 @@ export default function ThingsToDoAdmin() {
 								created_at,
 							}) => (
 								<ThingsToDoAdminCard
-									// key={id}
+									key={id}
 									country_name={country_name}
 									name={name}
 									details={details}
