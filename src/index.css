@@ -125,10 +125,13 @@ p {
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+	flex-wrap: wrap;
 	background: hsl(348, 33%, 76%);
 	color: hsl(35, 67%, 99%);
 	width: 100%;
-	height: 50vh;
+	height: 100vh;
+	background-size: cover;
+	overflow: scroll;
 }
 .aboutbrand2 {
 	padding-top: 2rem;
@@ -136,6 +139,7 @@ p {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	flex-wrap: wrap;
 	background: hsl(348, 33%, 76%);
 	color: hsl(35, 67%, 99%);
 	width: 100%;
@@ -146,6 +150,7 @@ p {
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
+	flex-wrap: wrap;
 	background: hsl(35, 67%, 99%);
 	color: hsl(348, 33%, 76%);
 	max-width: 100vw;
@@ -157,6 +162,7 @@ p {
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
+	flex-wrap: wrap;
 	background: hsl(35, 67%, 99%);
 	color: hsl(348, 33%, 76%);
 	width: 100%;
@@ -164,9 +170,13 @@ p {
 }
 
 .howtocard {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
 	border: solid 1px hsl(348, 33%, 76%);
-	width: 20vw;
-	height: 30vh;
+	max-width: 20vw;
+	max-height: 30vh;
 	padding: 3rem;
 	margin: 2rem;
 }
@@ -178,6 +188,7 @@ p {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	flex-wrap: wrap;
 	/* border: solid hsl(35, 67%, 99%) 2px; */
 	width: 50vw;
 	height: 20vh;
@@ -186,8 +197,8 @@ p {
 }
 
 .teamimg {
-	width: 55vw;
-	height: 80vh;
+	max-width: 55vw;
+	max-height: 80vh;
 }
 
 .aboutus {
@@ -198,3 +209,22 @@ p {
 p {
 	text-align: center;
 }
+
+@media all and (max-width: 900px) {
+	p {
+		font-size: 0.5rem;
+	}
+	.aboutbrand {
+		flex-direction: column;
+		overflow: hidden;
+	}
+	.aboutus {
+		font-size: 5rem;
+	}
+
+	.howtocard {
+		padding: 0.1rem;
+		max-height: 10vh;
+	}
+}
+
