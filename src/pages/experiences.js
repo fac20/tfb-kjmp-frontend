@@ -5,11 +5,13 @@ import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
+import DropdownFilter from "../components/ExperiencesDropwdownFilter";
 import { useParams, useLocation, Link } from "react-router-dom";
 import QuickExitButton from "./../components/exitButton";
 
 export default function ExperienceContent(props) {
 	const [experiencesData, setExperiencesData] = useState();
+	const [filterBy, setFilterBy] = useState("none");
 	const { id } = useParams();
 
 	useEffect(() => {
@@ -20,7 +22,7 @@ export default function ExperienceContent(props) {
 				props.setCountryName(result[0].country_name);
 			})
 			.catch(error => error);
-	}, [id]);
+	}, []);
 
 	const url = useLocation().pathname;
 
@@ -36,27 +38,33 @@ export default function ExperienceContent(props) {
 							Add Your own
 						</Button>
 					</Link>
+					<DropdownFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 					{experiencesData
-						? experiencesData.map(
-								({
-									socials,
-									details,
-									tags,
-									overall_experience,
-									created_at,
-									id,
-								}) => (
-									<ExperiencesCard
-										key={id}
-										socials={socials}
-										details={details}
-										tags={tags}
-										overall_experience={overall_experience}
-										created_at={created_at}
-										width="5vw"
-									/>
-								),
-						  )
+						? experiencesData
+								.filter(x => {
+									if (filterBy === "none") return x;
+									return x.tags.includes(filterBy);
+								})
+								.map(
+									({
+										socials,
+										details,
+										tags,
+										overall_experience,
+										created_at,
+										id,
+									}) => (
+										<ExperiencesCard
+											key={id}
+											socials={socials}
+											details={details}
+											tags={tags}
+											overall_experience={overall_experience}
+											created_at={created_at}
+											width="5vw"
+										/>
+									),
+								)
 						: null}
 				</Container>
 			</RowResponsive>

@@ -12,6 +12,7 @@ import {
 	Fieldset,
 	SubmitMessage,
 	SubmitContainer,
+	Span,
 } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
 import Button from "../styled-components/Button";
@@ -22,10 +23,12 @@ import QuickExitButton from "./exitButton";
 
 const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");
+	const [location, setLocation] = React.useState("");
 	const [details, setDetails] = React.useState("");
 	const [rating, setRating] = React.useState("");
 	const [tags, setTags] = React.useState({});
 	const [submitted, setSubmitted] = React.useState(false);
+	const [valid, setValid] = React.useState(false);
 	const { id } = useParams();
 	const history = useHistory();
 
@@ -35,27 +38,30 @@ const ExperiencesForm = props => {
 
 	const handleSubmit = event => {
 		event.preventDefault();
+		setSubmitted(true);
 		let tagsArray = Object.keys(tags).filter(tag => {
 			if (tags[tag]) return tag;
 		});
-		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/experiences`, {
-			method: "POST",
-			body: JSON.stringify({
-				socials,
-				details,
-				overall_experience: rating,
-				tags: tagsArray,
-			}),
-			headers: { "Content-Type": "application/json" },
-		}).then(data => setSubmitted(true));
+		if (location && details && rating) {
+			fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/experiences`, {
+				method: "POST",
+				body: JSON.stringify({
+					socials,
+					details,
+					overall_experience: rating,
+					tags: tagsArray,
+				}),
+				headers: { "Content-Type": "application/json" },
+			}).then(() => setValid(true));
+		}
 	};
 
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
 			<QuickExitButton />
-			{submitted && renderSubmitted()}
-			{!submitted && renderForm()}
+			{valid && renderSubmitted()}
+			{!valid && renderForm()}
 		</>
 	);
 
@@ -73,7 +79,7 @@ const ExperiencesForm = props => {
 			<Container justify="center" align="center" width="100vw">
 				<FormCont onSubmit={handleSubmit}>
 					<Label htmlFor="socials" color="hsl(31, 95%, 84%)">
-						Instagram Handle @:
+						Instagram Handle:
 					</Label>
 					<Input
 						name="socials"
@@ -82,9 +88,26 @@ const ExperiencesForm = props => {
 						}}
 						value={socials}
 						type="text"
+						placeholder="@theblackqueertravelguide"
 					/>
+					<Label htmlFor="location" color="hsl(31, 95%, 84%)">
+						Location: <Span>*</Span>
+					</Label>
+					<Input
+						name="location"
+						id="location"
+						onChange={event => {
+							setLocation(event.target.value);
+						}}
+						value={location}
+						type="text"
+						placeholder="@theblackqueertravelguide"
+					/>
+					{submitted && !location ? (
+						<Span>Please enter a location!</Span>
+					) : null}
 					<Label htmlFor="details" color="hsl(31, 95%, 84%)">
-						Your Experience:
+						Your Experience: <Span>*</Span>
 					</Label>
 					<TextArea
 						name="details"
@@ -93,8 +116,11 @@ const ExperiencesForm = props => {
 						}}
 						value={details}
 					/>
+					{submitted && !details ? (
+						<Span>Please enter some details about your experience!</Span>
+					) : null}
 					<Label htmlFor="rating" color="hsl(31, 95%, 84%)">
-						Overall Experience:
+						Overall Rating: <Span>*</Span>
 					</Label>
 					<ReactStars
 						id="rating"
@@ -104,6 +130,7 @@ const ExperiencesForm = props => {
 						activeColor="hsl(31, 95%, 84%)"
 						color="hsl(35, 67%, 96%)"
 					/>
+					{submitted && !rating ? <Span>Please enter a rating!</Span> : null}
 					<Label htmlFor="tags" color="hsl(31, 95%, 84%)">
 						Tag your post!
 					</Label>
