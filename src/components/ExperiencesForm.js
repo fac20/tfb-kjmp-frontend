@@ -15,8 +15,10 @@ import {
 } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
 import Button from "../styled-components/Button";
-import { NavBarTitle } from "./../components/navbar";
-import QuickExitButton from "./../components/exitButton";
+// import { ColumnResponsive } from "../styled-components/Responsive";
+import { NavBarTitle } from "./navbar";
+import QuickExitButton from "./exitButton";
+
 
 const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");

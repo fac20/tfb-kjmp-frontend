@@ -35,7 +35,7 @@ export default function Continents() {
 			<QuickExitButton />
 			<FlexCont
 				width="50vw"
-				height="70vh"
+				height="40vh"
 				back={background}
 				overflow="scroll"
 				media="75vw">

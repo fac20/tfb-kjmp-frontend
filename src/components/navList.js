@@ -1,14 +1,13 @@
 import React from "react";
 import Button from "./../styled-components/Button";
 import List from "./../styled-components/List";
-import { Link, useRouteMatch, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function NavList() {
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	path.pop();
 	let joinPath = path.join("/");
-	console.log(joinPath);
 	return (
 		<>
 			<ul>

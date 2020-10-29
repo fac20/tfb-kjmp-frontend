@@ -11,6 +11,8 @@ import Countries from "./pages/countries";
 import Continents from "./pages/continents";
 import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
+import ThingsToDoForm from "./components/ThingsToDoForm";
+
 
 function App() {
 	const [countryName, setCountryName] = React.useState("");
@@ -19,17 +21,23 @@ function App() {
 		<>
 			<Router>
 				<Switch>
-					<Route path="/continents/:name/:id/laws">
-						<Laws countryName={countryName} setCountryName={setCountryName} />
-					</Route>
 					<Route exact path="/continents">
 						<Continents />
+					</Route>
+					<Route path="/continents/:name/:id/thingstodo/sharethingstodo">
+						<ThingsToDoForm
+							countryName={countryName}
+							setCountryName={setCountryName}
+						/>
 					</Route>
 					<Route path="/continents/:name/:id/experiences/shareexperience">
 						<ExperiencesForm
 							countryName={countryName}
 							setCountryName={setCountryName}
 						/>
+					</Route>
+					<Route path="/continents/:name/:id/laws">
+						<Laws countryName={countryName} setCountryName={setCountryName} />
 					</Route>
 					<Route path="/continents/:name/:id/thingstodo">
 						<ThingsToDo

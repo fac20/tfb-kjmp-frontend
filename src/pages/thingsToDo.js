@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useParams, useLocation, Link } from "react-router-dom";
+
 import ThingsToDoCard from "./../components/thingstodo-card";
 import { Container } from "./../styled-components/Containers";
-import {
-	RowResponsive,
-	// ColumnResponsive,
-} from "./../styled-components/Responsive";
+import Button from "./../styled-components/Button";
+import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
-import { useParams } from "react-router-dom";
 import ttdimg from "./../images/thingstodo.png";
 import QuickExitButton from "./../components/exitButton";
 
 export default function ThingsToDo(props) {
 	const [thingsToDoData, setThingsToDoData] = useState();
 	const { id } = useParams();
+	const { name } = useParams();
+	console.log(name);
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/things_to_do`)
@@ -24,12 +25,18 @@ export default function ThingsToDo(props) {
 			.catch(error => error);
 	}, [id]);
 
+	const url = useLocation().pathname;
 	return (
 		<>
 			<NavBarTitle countryName={props.countryName} />
 			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
+				<Link to={`${url}/sharethingstodo`}>
+					<Button width="15vw" left="-15vw" medialeft="0vw">
+						Add Your own
+					</Button>
+				</Link>
 				<Container justify="center">
 					{thingsToDoData ? (
 						thingsToDoData.map(

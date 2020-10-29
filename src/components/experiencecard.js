@@ -26,8 +26,9 @@ export default function ExperiencesCard({
 		<DivContainer>
 			<Smile overallExperience={overall_experience} />
 			<TextContainer>
-				<Paragraph width="25vw">{details}</Paragraph>
+				<Paragraph width="25vw">Details:{details}</Paragraph>
 			</TextContainer>
+
 			<p>{socials}</p>
 			<p>Posted {timeString} ago</p>
 			<RowResponsive>{renderTags()}</RowResponsive>

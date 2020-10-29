@@ -39,12 +39,15 @@ export const DivContainer = styled.div`
 
 export const FlexCont = styled.div`
 	/* border: solid red 3px; */
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	justify-content: ${props => props.justify};
 	align-items: center;
 	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
 	width: ${props => props.width};
-	height: ${props => props.height};
+	min-height: ${props => props.height};
 	background: ${props => props.back};
 	padding-top: ${props => props.padTop};
 	padding: 0.5rem;
@@ -52,6 +55,7 @@ export const FlexCont = styled.div`
 	border-radius: ${props => props.radius};
 	overflow: ${props => props.overflow};
 	box-shadow: 7px 10px #000000;
+	-webkit-box-shadow: 7px 10px #000000;
 	margin: 2rem;
 
 	@media all and (max-width: 768px) {
