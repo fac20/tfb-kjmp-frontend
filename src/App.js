@@ -55,11 +55,11 @@ function App() {
 					<Route exact path="/">
 						<LandingPage />
 					</Route>
-					<Route exact path="/admin">
-						<AdminDashboard />
-					</Route>
-					<Route path="/admin/login">
+					<Route exact path="/admin/login">
 						<LoginPage />
+					</Route>
+					<Route exact path="/admin/:table">
+						<AdminDashboard />
 					</Route>
 				</Switch>
 			</Router>

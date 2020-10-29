@@ -8,9 +8,7 @@ function loginSubmit(username, password) {
 		fetch("https://tfb-bqtg.herokuapp.com/admin", {
 			method: "POST",
 			withCredentials: true,
-			credentials: "same-origin",
 			headers: {
-				"Access-Control-Allow-Headers": "*",
 				"content-type": "application/JSON",
 			},
 			body: JSON.stringify({
@@ -19,19 +17,11 @@ function loginSubmit(username, password) {
 			}),
 		})
 			.then(result => result.json())
-			.then(response => response)
+			.then(response => localStorage.setItem("access-token", response.token))
 			// () => window.localStorage.setItem("access token", "you're logged in"),
 			.catch(error => error)
 	);
 }
-
-fetch("https://tfb-bqtg.herokuapp.com/admin/experiences", {
-	headers: {
-		"content-type": "application/JSON",
-	},
-})
-	.then(result => result.json())
-	.then(data => data);
 
 export default function LoginForm() {
 	const [username, setUsername] = useState("");
