@@ -12,7 +12,7 @@ import Continents from "./pages/continents";
 import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
 import ThingsToDoForm from "./components/ThingsToDoForm";
-
+import About from "./pages/about";
 
 function App() {
 	const [countryName, setCountryName] = React.useState("");
@@ -65,6 +65,9 @@ function App() {
 					</Route>
 					<Route exact path="/admin/login">
 						<LoginPage />
+					</Route>
+					<Route exact path="/about">
+						<About />
 					</Route>
 					<Route exact path="/admin/:table">
 						<AdminDashboard />
