@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import ExperiencesAdminCard from "./experiences-admin-card";
+import ExperiencesAdminCard from "./AdminExperienceCard";
 import { Container } from "../styled-components/Containers";
 import { RowResponsive } from "../styled-components/Responsive";
 

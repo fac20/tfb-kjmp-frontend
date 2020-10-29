@@ -1,6 +1,6 @@
 import React from "react";
-import { FormCont, Label, Input } from "./../styled-components/Form";
-import { Container } from "./../styled-components/Containers";
+import { FormCont, Label, Input } from "../styled-components/Form";
+import { Container } from "../styled-components/Containers";
 import { useState, useEffect } from "react";
 
 function loginSubmit(username, password) {
