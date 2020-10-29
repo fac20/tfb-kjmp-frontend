@@ -5,30 +5,18 @@ import Button from "./../styled-components/Button";
 import React from "react";
 
 export default function AdminNavBar({ setPage }) {
-	function changePage(name) {
-		if (name === "thingstodo") {
-			console.log("ttd:", "thingstodo");
-			setPage("thingstodo");
-		} else if (name === "businesses") {
-			console.log("bus:", "business");
-			setPage("businesses");
-		} else {
-			console.log("experiences");
-			setPage("experiences");
-		}
-	}
 	return (
 		<Container border="solid black 1px" radius="20px">
 			<ColumnResponsive>
-				<Button background="transparent" onClick={changePage("experiences")}>
+				<Button background="transparent" onClick={() => setPage("experiences")}>
 					Experiences
 				</Button>
-				<Button background="transparent" onClick={changePage("thingstodo")}>
+				<Button background="transparent" onClick={() => setPage("thingstodo")}>
 					Things To Do
 				</Button>
-				<Button background="transparent" onClick={changePage("businesses")}>
+				{/* <Button background="transparent" onClick={handleClick}>
 					Businesses
-				</Button>
+				</Button> */}
 			</ColumnResponsive>
 		</Container>
 	);

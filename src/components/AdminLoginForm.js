@@ -1,11 +1,14 @@
 import React from "react";
 import { FormCont, Label, Input } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-function loginSubmit(username, password) {
-	return (
-		fetch("https://tfb-bqtg.herokuapp.com/admin", {
+export default function LoginForm() {
+	const history = useHistory();
+
+	function loginSubmit(username, password) {
+		return fetch("https://tfb-bqtg.herokuapp.com/admin", {
 			method: "POST",
 			withCredentials: true,
 			headers: {
@@ -17,13 +20,13 @@ function loginSubmit(username, password) {
 			}),
 		})
 			.then(result => result.json())
-			.then(response => localStorage.setItem("access-token", response.token))
-			// () => window.localStorage.setItem("access token", "you're logged in"),
-			.catch(error => error)
-	);
-}
+			.then(response => {
+				localStorage.setItem("access-token", response.token);
+				history.push("/admin");
+			})
+			.catch(error => error);
+	}
 
-export default function LoginForm() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	return (

@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-import ExperiencesAdminCard from "./AdminExperienceCard";
+import ThingsToDoAdminCard from "./AdminThingsToDoCard";
 import { Container } from "../styled-components/Containers";
 import { RowResponsive } from "../styled-components/Responsive";
 
-export default function ExperiencesAdmin() {
-	const [experiencesPosts, setExperiencesPosts] = useState([]);
+export default function ThingsToDoAdmin() {
+	const [thingsToDoPosts, setThingsToDoPosts] = useState([]);
 
 	useEffect(() => {
-		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`, {
+		fetch(`https://tfb-bqtg.herokuapp.com/admin/things_to_do`, {
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
 			},
 		})
 			.then(result => result.json())
 			.then(result => {
-				setExperiencesPosts(result);
+				setThingsToDoPosts(result);
 				console.log(result);
 			})
 			.catch(error => error);
@@ -25,30 +25,29 @@ export default function ExperiencesAdmin() {
 		<>
 			<Container justify="center" align="center">
 				<RowResponsive>
-					{experiencesPosts ? (
-						experiencesPosts.map(
+					{thingsToDoPosts ? (
+						thingsToDoPosts.map(
 							({
-								id,
 								country_name,
-								socials,
+								name,
 								details,
-								tags,
-								overall_experience,
+								location,
+								date_time,
 								created_at,
 							}) => (
-								<ExperiencesAdminCard
-									key={id}
+								<ThingsToDoAdminCard
+									// key={id}
 									country_name={country_name}
-									socials={socials}
+									name={name}
 									details={details}
-									tags={tags}
-									overall_experience={overall_experience}
+									location={location}
+									date_time={date_time}
 									created_at={created_at}
 								/>
 							),
 						)
 					) : (
-						<h1>Fetching experiences posts for approval...</h1>
+						<h1>Fetching things to do posts for approval...</h1>
 					)}
 				</RowResponsive>
 			</Container>

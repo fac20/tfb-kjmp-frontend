@@ -3,13 +3,14 @@ import { Container } from "../../styled-components/Containers";
 import { RowResponsive } from "../../styled-components/Responsive";
 import { NavBarTitle } from "../../components/navbar";
 import ExperiencesAdmin from "../../components/AdminExperiences";
+import ThingsToDoAdmin from "../../components/AdminThingsToDo";
 
 import { DivContainer } from "../../styled-components/Containers";
 
 import AdminNavBar from "../../components/AdminNavBar";
 
 export default function AdminDashboard() {
-	const [page, setPage] = useState([""]);
+	const [page, setPage] = useState("");
 
 	console.log(page);
 
@@ -20,8 +21,11 @@ export default function AdminDashboard() {
 				<AdminNavBar setPage={setPage} />
 				<Container justify="center" align="flex-start">
 					<DivContainer>
-						<ExperiencesAdmin />
-						{/* {page === "thingstodo" ? <ThingsToDoAdmin /> : null} */}
+						{page === "experiences" || page === "" ? (
+							<ExperiencesAdmin />
+						) : null}
+
+						{page === "thingstodo" ? <ThingsToDoAdmin /> : null}
 					</DivContainer>
 				</Container>
 			</RowResponsive>
