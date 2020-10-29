@@ -3,7 +3,7 @@ import Button from "./../styled-components/Button";
 import List from "./../styled-components/List";
 import { Link, useLocation } from "react-router-dom";
 
-export default function NavList() {
+export default function NavList({ countryName }) {
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	path.pop();
@@ -13,7 +13,7 @@ export default function NavList() {
 			<ul>
 				<Link to={`${joinPath}/laws`}>
 					<List>
-						<Button>LAWS</Button>
+						<Button>{`ABOUT ${countryName.toUpperCase()}`}</Button>
 					</List>
 				</Link>
 				<Link to={`${joinPath}/thingstodo`}>
