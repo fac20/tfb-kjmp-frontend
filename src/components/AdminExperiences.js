@@ -9,7 +9,7 @@ export default function ExperiencesAdmin() {
 	const [updated, setUpdated] = useState(true);
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/admin/experiences`, {
+		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`, {
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
 			},

@@ -9,7 +9,7 @@ export default function ThingsToDoAdmin() {
 	const [updated, setUpdated] = useState(true);
 
 	useEffect(() => {
-		fetch(`http://localhost:4000/admin/things_to_do`, {
+		fetch(`https://tfb-bqtg.herokuapp.com/admin/things_to_do`, {
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
 			},

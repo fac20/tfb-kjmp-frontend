@@ -3,7 +3,7 @@ import Button from "../styled-components/Button";
 
 export function AdminApproveButton({ id, table, setUpdated }) {
 	const handleClick = event => {
-		return fetch(`http://localhost:4000/admin/${table}/${id}`, {
+		return fetch(`https://tfb-bqtg.herokuapp.com/admin/${table}/${id}`, {
 			method: "PUT",
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
@@ -22,7 +22,7 @@ export function AdminApproveButton({ id, table, setUpdated }) {
 
 export function AdminDeleteButton({ table, id, setUpdated }) {
 	const handleClick = event => {
-		return fetch(`http://localhost:4000/admin/${table}/${id}`, {
+		return fetch(`https://tfb-bqtg.herokuapp.com/admin/${table}/${id}`, {
 			method: "DELETE",
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
