@@ -1,4 +1,4 @@
-const tags = [
+const tagsArray = [
 	"none",
 	"black",
 	"queer",
@@ -10,4 +10,4 @@ const tags = [
 	"business",
 ];
 
-export default tags;
+export default tagsArray;

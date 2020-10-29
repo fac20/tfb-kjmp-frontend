@@ -19,7 +19,7 @@ import Button from "../styled-components/Button";
 // import { ColumnResponsive } from "../styled-components/Responsive";
 import { NavBarTitle } from "./navbar";
 import QuickExitButton from "./exitButton";
-
+import tagsArray from "../utils/tags";
 
 const ExperiencesForm = props => {
 	const [socials, setSocials] = React.useState("");
@@ -75,6 +75,25 @@ const ExperiencesForm = props => {
 	}
 
 	function renderForm() {
+		const renderCheckboxes = () => {
+			const checkboxTags = tagsArray.slice(1);
+
+			return checkboxTags.map(tag => (
+				<React.Fragment key={tag}>
+					<CheckboxLabel htmlFor={tag}>
+						{tag[0].toUpperCase() + tag.slice(1)}
+					</CheckboxLabel>
+					<CheckboxInput
+						id={tag}
+						name={tag}
+						onChange={handleCheckbox}
+						checked={tags.name}
+						type="checkbox"
+					/>
+				</React.Fragment>
+			));
+		};
+
 		return (
 			<Container justify="center" align="center" width="100vw">
 				<FormCont onSubmit={handleSubmit}>
@@ -134,78 +153,7 @@ const ExperiencesForm = props => {
 					<Label htmlFor="tags" color="hsl(31, 95%, 84%)">
 						Tag your post!
 					</Label>
-					<Fieldset id="tags">
-						<CheckboxLabel htmlFor="black">Black</CheckboxLabel>
-						<CheckboxInput
-							id="black"
-							name="black"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="queer">Queer</CheckboxLabel>
-						<CheckboxInput
-							id="queer"
-							name="queer"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="trans">Trans</CheckboxLabel>
-						<CheckboxInput
-							id="trans"
-							name="trans"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="disabled">Disabled</CheckboxLabel>
-						<CheckboxInput
-							id="disabled"
-							name="disabled"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="neurotypical">Neurotypical</CheckboxLabel>
-						<CheckboxInput
-							id="neurotypical"
-							name="neurotypical"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="wheelchair-user">
-							Wheelchair user
-						</CheckboxLabel>
-						<CheckboxInput
-							id="wheelchair"
-							name="wheelchair-user"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="family-friendly">
-							Family-friendly
-						</CheckboxLabel>
-						<CheckboxInput
-							id="family"
-							name="family-friendly"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-						<CheckboxLabel htmlFor="business">
-							Travelling for business
-						</CheckboxLabel>
-						<CheckboxInput
-							id="business"
-							name="business"
-							onChange={handleCheckbox}
-							checked={tags.name}
-							type="checkbox"
-						/>
-					</Fieldset>
+					<Fieldset id="tags">{renderCheckboxes()}</Fieldset>
 					<Button fontsize="1.5vw" height="7vh" width="7vw">
 						Submit
 					</Button>

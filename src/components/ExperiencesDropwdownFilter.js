@@ -1,6 +1,6 @@
 import React from "react";
 
-import tags from "../utils/tags";
+import tagsArray from "../utils/tags";
 
 const DropdownFilter = ({ filterBy, setFilterBy }) => {
 	const handleChange = e => {
@@ -8,7 +8,7 @@ const DropdownFilter = ({ filterBy, setFilterBy }) => {
 	};
 
 	const renderOptions = () => {
-		return tags.map(tag => <option value={tag}>{tag}</option>);
+		return tagsArray.map(tag => <option value={tag}>{tag}</option>);
 	};
 
 	console.log(renderOptions);
