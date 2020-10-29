@@ -31,7 +31,7 @@ export default function ThingsToDo(props) {
 			<NavBarTitle countryName={props.countryName} />
 			<QuickExitButton />
 			<RowResponsive>
-				<NavBarSide />
+				<NavBarSide countryName={props.countryName} />
 				<Link to={`${url}/sharethingstodo`}>
 					<Button width="15vw" left="-15vw" medialeft="0vw">
 						Add Your own
