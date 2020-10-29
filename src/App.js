@@ -11,8 +11,7 @@ import Countries from "./pages/countries";
 import Continents from "./pages/continents";
 import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
-import ThingsToDoForm from "./components/ThingsToDoForm";
-
+import ThingsToDoForm from "./components/thingsToDoForm";
 
 function App() {
 	const [countryName, setCountryName] = React.useState("");
