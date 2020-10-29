@@ -1,23 +1,13 @@
 import React from "react";
 
+import tags from "../utils/tags";
+
 const DropdownFilter = ({ filterBy, setFilterBy }) => {
 	const handleChange = e => {
 		setFilterBy(e.target.value);
 	};
 
 	const renderOptions = () => {
-		const tags = [
-			"none",
-			"black",
-			"queer",
-			"trans",
-			"disabled",
-			"neurotypical",
-			"wheelchair-user",
-			"family-friendly",
-			"business",
-		];
-
 		return tags.map(tag => <option value={tag}>{tag}</option>);
 	};
 
