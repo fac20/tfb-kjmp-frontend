@@ -6,9 +6,10 @@ import { RowResponsive } from "../styled-components/Responsive";
 
 export default function ExperiencesAdmin() {
 	const [experiencesPosts, setExperiencesPosts] = useState([]);
+	const [updated, setUpdated] = useState(true);
 
 	useEffect(() => {
-		fetch(`https://tfb-bqtg.herokuapp.com/admin/experiences`, {
+		fetch(`http://localhost:4000/admin/experiences`, {
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
 			},
@@ -19,7 +20,7 @@ export default function ExperiencesAdmin() {
 				console.log(result);
 			})
 			.catch(error => error);
-	}, []);
+	}, [updated]);
 
 	return (
 		<>
@@ -38,7 +39,9 @@ export default function ExperiencesAdmin() {
 								created_at,
 							}) => (
 								<ExperiencesAdminCard
+									setUpdated={setUpdated}
 									key={id}
+									id={id}
 									country_name={country_name}
 									socials={socials}
 									details={details}

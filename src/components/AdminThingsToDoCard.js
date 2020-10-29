@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "../styled-components/Button";
 import { TextContainer, DivContainer } from "../styled-components/Containers";
 import Paragraph from "../styled-components/Paragraph";
 import { RowResponsive } from "../styled-components/Responsive";
+import { AdminApproveButton, AdminDeleteButton } from "./AdminButtons";
 
 export default function ThingsToDoAdminCard(props) {
 	return (
@@ -17,8 +17,16 @@ export default function ThingsToDoAdminCard(props) {
 				<p>Things to do date/time: {props.date_time}</p>
 				<p>Post created at: {props.created_at} </p>
 				<RowResponsive>
-					<Button background="#hsl(95, 71%, 73%)">Approve</Button>
-					<Button background="hsl(4, 71%, 73%)">Delete</Button>
+					<AdminApproveButton
+						id={props.id}
+						table="things_to_do"
+						setUpdated={props.setUpdated}
+					/>
+					<AdminDeleteButton
+						id={props.id}
+						table="things_to_do"
+						setUpdated={props.setUpdated}
+					/>
 				</RowResponsive>
 			</DivContainer>
 		</>

@@ -6,9 +6,10 @@ import { RowResponsive } from "../styled-components/Responsive";
 
 export default function ThingsToDoAdmin() {
 	const [thingsToDoPosts, setThingsToDoPosts] = useState([]);
+	const [updated, setUpdated] = useState(true);
 
 	useEffect(() => {
-		fetch(`https://tfb-bqtg.herokuapp.com/admin/things_to_do`, {
+		fetch(`http://localhost:4000/admin/things_to_do`, {
 			headers: {
 				authorization: `Bearer ${localStorage.getItem("access-token")}`,
 			},
@@ -18,7 +19,7 @@ export default function ThingsToDoAdmin() {
 				setThingsToDoPosts(result);
 			})
 			.catch(error => error);
-	}, []);
+	}, [updated]);
 
 	return (
 		<>
@@ -38,7 +39,9 @@ export default function ThingsToDoAdmin() {
 								created_at,
 							}) => (
 								<ThingsToDoAdminCard
+									setUpdated={setUpdated}
 									key={id}
+									id={id}
 									country_name={country_name}
 									name={name}
 									details={details}
