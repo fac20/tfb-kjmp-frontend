@@ -70,13 +70,10 @@ function App() {
 					<Route exact path="/about">
 						<About />
 					</Route>
-    
-					<Route exact path="/admin/:table">
 
 					<Route exact path="/admin/">
 						<AdminDashboard />
 					</Route>
-    
 				</Switch>
 			</Router>
 		</>
