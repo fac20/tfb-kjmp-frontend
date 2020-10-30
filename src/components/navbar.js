@@ -4,20 +4,23 @@ import { Link } from "react-router-dom";
 import SearcBar from "./../components/searchbar";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { useAppContext } from "../App";
 
-export function NavBarSide({ countryName }) {
+export function NavBarSide() {
 	return (
 		<>
 			<div className="sticky">
 				<section className="navbar">
-					<NavList countryName={countryName} />
+					<NavList />
 				</section>
 			</div>
 		</>
 	);
 }
 
-export function NavBarTitle({ countryName }) {
+export function NavBarTitle() {
+	const { countryName } = useAppContext();
+
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	const continentName = path[2];

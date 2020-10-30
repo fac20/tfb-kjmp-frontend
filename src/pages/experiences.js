@@ -8,30 +8,33 @@ import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import DropdownFilter from "../components/ExperiencesDropwdownFilter";
 import { useParams, useLocation, Link } from "react-router-dom";
 import QuickExitButton from "./../components/exitButton";
+import { useAppContext } from "../App";
 
-export default function ExperienceContent(props) {
+export default function ExperienceContent() {
 	const [experiencesData, setExperiencesData] = useState();
 	const [filterBy, setFilterBy] = useState("none");
 	const { id } = useParams();
+	const { setCountryName } = useAppContext();
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/experiences`)
 			.then(result => result.json())
 			.then(result => {
 				setExperiencesData(result);
-				props.setCountryName(result[0].country_name);
+				setCountryName(result[0].country_name);
 			})
 			.catch(error => error);
 	}, []);
 
 	const url = useLocation().pathname;
+	// const url = "/";
 
 	return (
 		<>
-			<NavBarTitle countryName={props.countryName} />
+			<NavBarTitle />
 			<QuickExitButton />
 			<RowResponsive>
-				<NavBarSide countryName={props.countryName} />
+				<NavBarSide />
 				<Container justify="center" align="flex-start">
 					<Link to={`${url}/shareexperience`}>
 						<Button width="15vw" left="-15vw" medialeft="0vw">

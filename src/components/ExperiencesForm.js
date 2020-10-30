@@ -58,7 +58,7 @@ const ExperiencesForm = props => {
 
 	return (
 		<>
-			<NavBarTitle countryName={props.countryName} />
+			<NavBarTitle />
 			<QuickExitButton />
 			{valid && renderSubmitted()}
 			{!valid && renderForm()}

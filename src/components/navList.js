@@ -2,12 +2,14 @@ import React from "react";
 import Button from "./../styled-components/Button";
 import List from "./../styled-components/List";
 import { Link, useLocation } from "react-router-dom";
+import { useAppContext } from "../App";
 
-export default function NavList({ countryName }) {
+export default function NavList() {
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	path.pop();
 	let joinPath = path.join("/");
+	const { countryName } = useAppContext();
 	return (
 		<>
 			<ul>
