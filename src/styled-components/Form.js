@@ -15,7 +15,7 @@ const FormCont = styled.form`
 	font-size: 1.3rem;
 	font-weight: 800px;
 	overflow: scroll;
-
+	/* writing so i can commit  */
 	@media screen and (max-width: 700px) {
 		width: 80vw;
 	}
