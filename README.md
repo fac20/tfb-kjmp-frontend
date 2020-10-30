@@ -208,6 +208,8 @@ Velocity for this week can be viewed on [Notion](https://www.notion.so/3bd0bf72c
 - Finish adding 'things to do' form 
 - Finish admin pages for approving and deleting posts 
 - Create 'about' page 
+- Created filtering for tags 
+- Styling fixes
 
 ## Reflections and what next
 ### 👨‍🏫 Key takeaways
