@@ -25,6 +25,11 @@ export function NavBarTitle() {
 	const path = location.pathname.split("/");
 	const continentName = path[2];
 	path.pop();
+	if (
+		path[path.length - 1] === "thingstodo" ||
+		path[path.length - 1] === "experiences"
+	)
+		path.pop();
 	let joinPath = path.join("/");
 
 	const continentsObject = {
