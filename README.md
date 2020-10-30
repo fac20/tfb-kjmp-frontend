@@ -40,7 +40,7 @@ Allows users to input user data from a postgres database using an RESTful API bu
 - CircleCI
 - CodeCov 
 
-#### Dependencies
+#### Dependencies (backend) 
 
 - cors - provides a Connect/Express middleware that can be used to enable CORS with various options
 - dotenv - allows private variables to be added (API)
