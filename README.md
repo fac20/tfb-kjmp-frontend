@@ -211,8 +211,6 @@ Velocity for this week can be viewed on [Notion](https://www.notion.so/3bd0bf72c
 - Created filtering for tags 
 - Styling fixes
 
-## Reflections and what next
-### 👨‍🏫 Key takeaways
 
 
 ### ⏳ Additional Features
