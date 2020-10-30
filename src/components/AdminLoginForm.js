@@ -37,21 +37,25 @@ export default function LoginForm() {
 					e.preventDefault();
 					loginSubmit(username, password);
 				}}>
-				<Label htmlFor="username">Login</Label>
+				<Label htmlFor="username" color="hsl(31, 95%, 84%)">
+					Login
+				</Label>
 				<Input
 					type="text"
 					name="username"
 					value={username}
 					onChange={e => setUsername(e.target.value)}
 				/>
-				<Label htmlFor="password">Password</Label>
+				<Label htmlFor="password" color="hsl(31, 95%, 84%)">
+					Password
+				</Label>
 				<Input
 					type="password"
 					name="password"
 					value={password}
 					onChange={e => setPassword(e.target.value)}
 				/>
-				<Input type="submit" value="SUBMIT" />
+				<Input type="submit" value="SUBMIT" id="submitadmin" height="2vh" />
 			</FormCont>
 		</Container>
 	);
