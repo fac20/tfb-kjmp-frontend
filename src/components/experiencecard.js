@@ -19,7 +19,10 @@ export default function ExperiencesCard({
 
 	function renderTags() {
 		return tags.map(tag => (
-			<Button background="hsl(46, 77%, 68%)" onClick={() => setFilterBy(tag)}>
+			<Button
+				key={tag}
+				background="hsl(46, 77%, 68%)"
+				onClick={() => setFilterBy(tag)}>
 				#{tag}
 			</Button>
 		));

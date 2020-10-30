@@ -8,7 +8,11 @@ const DropdownFilter = ({ filterBy, setFilterBy }) => {
 	};
 
 	const renderOptions = () => {
-		return tagsArray.map(tag => <option value={tag}>{tag}</option>);
+		return tagsArray.map(tag => (
+			<option key={tag} value={tag}>
+				{tag}
+			</option>
+		));
 	};
 
 	return (
