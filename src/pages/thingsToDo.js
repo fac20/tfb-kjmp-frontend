@@ -8,19 +8,19 @@ import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import ttdimg from "./../images/thingstodo.png";
 import QuickExitButton from "./../components/exitButton";
+import { useAppContext } from "../App";
 
 export default function ThingsToDo(props) {
 	const [thingsToDoData, setThingsToDoData] = useState();
 	const { id } = useParams();
-	const { name } = useParams();
-	console.log(name);
+	const { setCountryName } = useAppContext();
 
 	useEffect(() => {
 		fetch(`https://tfb-bqtg.herokuapp.com/countries/${id}/things_to_do`)
 			.then(result => result.json())
 			.then(result => {
 				setThingsToDoData(result);
-				props.setCountryName(result[0].country_name);
+				setCountryName(result[0].country_name);
 			})
 			.catch(error => error);
 	}, [id]);
@@ -28,10 +28,10 @@ export default function ThingsToDo(props) {
 	const url = useLocation().pathname;
 	return (
 		<>
-			<NavBarTitle countryName={props.countryName} />
+			<NavBarTitle />
 			<QuickExitButton />
 			<RowResponsive>
-				<NavBarSide countryName={props.countryName} />
+				<NavBarSide />
 				<Link to={`${url}/sharethingstodo`}>
 					<Button width="15vw" left="-15vw" medialeft="0vw">
 						Add Your own

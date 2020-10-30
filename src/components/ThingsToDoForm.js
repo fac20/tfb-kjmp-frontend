@@ -1,4 +1,6 @@
 import React from "react";
+import { useParams, useHistory } from "react-router-dom";
+
 import {
 	FormCont,
 	Label,
@@ -8,7 +10,6 @@ import {
 	SubmitContainer,
 } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
-import { useParams, useHistory } from "react-router-dom";
 import Button from "../styled-components/Button";
 import QuickExitButton from "./exitButton";
 import { NavBarTitle } from "./navbar";

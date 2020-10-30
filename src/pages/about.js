@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, DivContainer } from "./../styled-components/Containers";
+import { Container } from "./../styled-components/Containers";
 import AboutNav from "../components/aboutnav";
 import HowToCard from "./../components/howtocards";
 import teamimg from "./../images/team.png";
