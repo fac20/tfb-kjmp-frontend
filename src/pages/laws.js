@@ -28,7 +28,7 @@ export default function Laws() {
 		if (!lawData) return <h1>No Information Yet.....</h1>;
 		return Object.keys(lawData).map(key => {
 			if (key === "id" || key === "Country") return null;
-			return <LawsCard title={key} content={lawData[key]} />;
+			return <LawsCard key={key} title={key} content={lawData[key]} />;
 		});
 	}
 

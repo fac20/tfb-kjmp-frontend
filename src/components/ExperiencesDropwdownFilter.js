@@ -11,7 +11,6 @@ const DropdownFilter = ({ filterBy, setFilterBy }) => {
 		return tagsArray.map(tag => <option value={tag}>{tag}</option>);
 	};
 
-	console.log(renderOptions);
 	return (
 		<>
 			<label htmlFor="filter">Filter by tag</label>
