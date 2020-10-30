@@ -210,13 +210,19 @@ p {
 	text-align: center;
 }
 
+.footertext {
+	width: 30vw;
+}
+
 @media all and (max-width: 900px) {
 	p {
-		font-size: 0.5rem;
+		font-size: 1.7vw;
 	}
-	.aboutbrand {
+	.aboutbrand,
+	.aboutbrand2 {
 		flex-direction: column;
 		overflow: hidden;
+		flex-wrap: wrap;
 	}
 	.aboutus {
 		font-size: 5rem;
@@ -225,6 +231,9 @@ p {
 	.howtocard {
 		padding: 0.1rem;
 		max-height: 10vh;
+		font-size: 0.5rem;
+	}
+	.aboutus {
+		font-size: 5vw;
 	}
 }
-
