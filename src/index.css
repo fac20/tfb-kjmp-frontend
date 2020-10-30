@@ -237,3 +237,8 @@ p {
 		font-size: 5vw;
 	}
 }
+/* admin form */
+
+#submitadmin {
+	font-size: 1.2vw;
+}
