@@ -14,6 +14,7 @@ const FormCont = styled.form`
 	font-family: "Anonymous Pro", monospace;
 	font-size: 1.3rem;
 	font-weight: 800px;
+	overflow: scroll;
 
 	@media screen and (max-width: 700px) {
 		width: 80vw;
@@ -76,12 +77,20 @@ const Input = styled.input`
 	font-family: "Anonymous Pro", monospace;
 	padding: 1.5rem 0.5rem;
 	color: hsl(31, 95%, 84%);
+	&::placeholder {
+		color: hsl(31, 95%, 84%);
+	}
 `;
 
 const CheckboxInput = styled.input`
-	margin-left: 14rem;
+	margin-left: 10rem;
+	margin-right: 3rem;
 	height: 1.3rem;
 	width: 1.3rem;
+	@media all and (max-width: 500px) {
+		margin-left: 0.5rem;
+		margin-right: 2rem;
+	}
 `;
 
 const TextArea = styled.textarea`

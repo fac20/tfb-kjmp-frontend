@@ -35,11 +35,11 @@ export const DivContainer = styled.div`
 	justify-content: ${props => props.justify};
 	left: ${props => props.left || "none"};
 	align-items: center;
-	flex-direction: ${props => props.direction || "center"};
+	flex-direction: ${props => props.direction || "column"};
 	width: ${props => props.width};
 	height: ${props => props.height};
 	margin: ${props => props.margin || "1rem"};
-	border: red solid 3px;
+	/* border: red solid 3px; */
 	background: ${props => props.back || "#ffffff"};
 	box-shadow: ${props => props.shadow || "7px 10px #000000"};
 	color: ${props => props.color || "black"};
