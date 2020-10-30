@@ -1,17 +1,16 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Img from "./../components/img";
-import geotag from "./../images/geotag.svg";
+import { Link, useParams, useRouteMatch } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import { tada } from "react-animations";
+
 import QuickExitButton from "./../components/exitButton";
 import {
 	ColumnResponsive,
 	RowResponsive,
 } from "./../styled-components/Responsive";
 import { NavBarTitle } from "./../components/navbar";
-import { Link, useParams, useRouteMatch } from "react-router-dom";
 import { FlexCont, Container } from "./../styled-components/Containers";
-import styled, { keyframes } from "styled-components";
-import { tada } from "react-animations";
 
 const tadaAnimation = keyframes`${tada}`;
 
@@ -26,17 +25,15 @@ const TadaDiv = styled.div`
 export default function Countries() {
 	const [data, setData] = useState([]);
 	let { name } = useParams();
-	let { url, path } = useRouteMatch();
+	let { url } = useRouteMatch();
 
 	useEffect(() => {
 		fetch("https://tfb-bqtg.herokuapp.com/countries")
 			.then(result => result.json())
 			.then(result => {
-				console.log(result);
 				const correctCountries = result.filter(
 					country => country.continent === name,
 				);
-				console.log(correctCountries);
 				setData(correctCountries);
 			})
 			.catch(error => error);

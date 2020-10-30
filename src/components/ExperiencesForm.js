@@ -16,7 +16,6 @@ import {
 } from "../styled-components/Form";
 import { Container } from "../styled-components/Containers";
 import Button from "../styled-components/Button";
-// import { ColumnResponsive } from "../styled-components/Responsive";
 import { NavBarTitle } from "./navbar";
 import QuickExitButton from "./exitButton";
 import tagsArray from "../utils/tags";

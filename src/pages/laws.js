@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import QuickExitButton from "./../components/exitButton";
 import { useParams } from "react-router-dom";
+
+import QuickExitButton from "./../components/exitButton";
 import { Container } from "./../styled-components/Containers";
 import LawsCard from "./../components/laws-card";
 import { RowResponsive } from "./../styled-components/Responsive";

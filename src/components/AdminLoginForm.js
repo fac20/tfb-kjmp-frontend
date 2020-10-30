@@ -1,8 +1,9 @@
 import React from "react";
-import { FormCont, Label, Input } from "../styled-components/Form";
-import { Container } from "../styled-components/Containers";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+import { FormCont, Label, Input } from "../styled-components/Form";
+import { Container } from "../styled-components/Containers";
 
 export default function LoginForm() {
 	const history = useHistory();

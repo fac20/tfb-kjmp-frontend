@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useParams, useLocation, Link } from "react-router-dom";
+
 import { Container } from "./../styled-components/Containers";
 import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
 import DropdownFilter from "../components/ExperiencesDropwdownFilter";
-import { useParams, useLocation, Link } from "react-router-dom";
 import QuickExitButton from "./../components/exitButton";
 import { useAppContext } from "../App";
 

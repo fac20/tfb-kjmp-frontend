@@ -1,9 +1,9 @@
 import React from "react";
-import NavList from "./../components/navList";
-import { Link } from "react-router-dom";
-import SearcBar from "./../components/searchbar";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+
+import NavList from "./../components/navList";
+import SearcBar from "./../components/searchbar";
 import { useAppContext } from "../App";
 
 export function NavBarSide() {

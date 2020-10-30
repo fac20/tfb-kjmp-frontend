@@ -1,4 +1,5 @@
 import React from "react";
+
 import ExitButton from "../styled-components/ExitButton";
 
 const QuickExitButton = ({ setExit }) => {
