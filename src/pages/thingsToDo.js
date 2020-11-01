@@ -32,11 +32,13 @@ export default function ThingsToDo(props) {
 			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
-				<Link to={`${url}/sharethingstodo`}>
-					<Button width="15vw" left="-15vw" medialeft="0vw">
-						Add Your own
-					</Button>
-				</Link>
+				<Container justify="center">
+					<Link to={`${url}/sharethingstodo`}>
+						<Button width="15vw" left="-15vw" medialeft="0vw">
+							Add Your own
+						</Button>
+					</Link>
+				</Container>
 				<Container justify="center">
 					{thingsToDoData ? (
 						thingsToDoData.map(
