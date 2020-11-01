@@ -108,3 +108,93 @@ p {
 	font-size: 1rem;
 	font-weight: 600;
 }
+/* //about page  */
+.aboutnavtext {
+	color: hsl(35, 67%, 96%);
+}
+.aboutnav {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	background: hsl(348, 33%, 76%);
+	color: hsl(35, 67%, 99%);
+}
+.aboutbrand {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	background: hsl(348, 33%, 76%);
+	color: hsl(35, 67%, 99%);
+	width: 100%;
+	height: 50vh;
+}
+.aboutbrand2 {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: hsl(348, 33%, 76%);
+	color: hsl(35, 67%, 99%);
+	width: 100%;
+	height: 50vh;
+}
+.howtouse {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	background: hsl(35, 67%, 99%);
+	color: hsl(348, 33%, 76%);
+	max-width: 100vw;
+	height: 70vh;
+	overflow: scroll;
+}
+.howtousetitle {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	background: hsl(35, 67%, 99%);
+	color: hsl(348, 33%, 76%);
+	width: 100%;
+	height: 10vh;
+}
+
+.howtocard {
+	border: solid 1px hsl(348, 33%, 76%);
+	width: 20vw;
+	height: 30vh;
+	padding: 3rem;
+	margin: 2rem;
+}
+.howtocard::first-letter {
+	border-bottom: solid 2px hsl(348, 33%, 76%);
+}
+.textabout {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	/* border: solid hsl(35, 67%, 99%) 2px; */
+	width: 50vw;
+	height: 20vh;
+	font-size: 20px;
+	margin-top: 2rem;
+}
+
+.teamimg {
+	width: 55vw;
+	height: 80vh;
+}
+
+.aboutus {
+	font-size: 10rem;
+	margin-left: 5rem;
+}
+
+p {
+	text-align: center;
+}

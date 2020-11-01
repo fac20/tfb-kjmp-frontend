@@ -9,7 +9,7 @@ import { DivContainer } from "../../styled-components/Containers";
 import AdminNavBar from "../../components/AdminNavBar";
 
 export default function AdminDashboard() {
-	const [page, setPage] = useState("");
+	const [page, setPage] = useState("experiences");
 
 	const renderPage = page => {
 		if (page === "experiences") return <ExperiencesAdmin />;

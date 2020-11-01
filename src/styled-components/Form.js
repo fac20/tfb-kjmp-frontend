@@ -25,7 +25,7 @@ const FormCont = styled.form`
 
 const Label = styled.label`
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: left;
 	width: 80%;
 	font-size: 1.3rem;
@@ -40,6 +40,12 @@ const Label = styled.label`
 	@media all and (max-width: 411px) {
 		font-size: 15px;
 	}
+`;
+
+const Span = styled.span`
+	color: hsl(342, 77%, 66%, 0.8);
+	font-family: "Helvetica";
+	font-size: 1rem;
 `;
 
 const CheckboxLabel = styled.label`
@@ -60,7 +66,7 @@ const Fieldset = styled.fieldset`
 
 const Input = styled.input`
 	border: hsl(31, 95%, 84%) 3px solid;
-	margin: 0.5rem 0 2rem 0;
+	margin-top: 0.5rem;
 	width: 80%;
 	height: 4vh;
 	border-radius: 20px;
@@ -80,7 +86,7 @@ const CheckboxInput = styled.input`
 
 const TextArea = styled.textarea`
 	border: hsl(31, 95%, 84%) 3px solid;
-	margin: 0.5rem 0 2rem 0;
+	margin-top: 0.5rem;
 	width: 80%;
 	height: 12vh;
 	border-radius: 20px;
@@ -123,4 +129,5 @@ export {
 	Fieldset,
 	SubmitMessage,
 	SubmitContainer,
+	Span,
 };

@@ -34,7 +34,7 @@ export default function Laws(props) {
 			<NavBarTitle countryName={props.countryName} />
 			<QuickExitButton />
 			<RowResponsive>
-				<NavBarSide />
+				<NavBarSide countryName={props.countryName} />
 				<Container justify="center" align="flex-start" padTop="0">
 					{renderLawCards()}
 				</Container>

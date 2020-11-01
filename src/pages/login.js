@@ -10,7 +10,6 @@ export default function LoginPage() {
 		<>
 			<NavBarTitle />
 			<RowResponsive>
-				<NavBarSide />
 				<Container justify="center" align="flex-start">
 					<LoginForm />
 				</Container>

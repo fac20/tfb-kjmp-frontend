@@ -5,12 +5,12 @@ import SearcBar from "./../components/searchbar";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
-export function NavBarSide() {
+export function NavBarSide({ countryName }) {
 	return (
 		<>
 			<div className="sticky">
 				<section className="navbar">
-					<NavList />
+					<NavList countryName={countryName} />
 				</section>
 			</div>
 		</>
