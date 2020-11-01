@@ -82,7 +82,9 @@ a:hover {
 	}
 
 	.navbartitle {
-		justify-content: center;
+		justify-content: space-around;
+		height: 10vh;
+		margin-top: 1rem;
 	}
 	body {
 		font-size: 10px;
@@ -241,4 +243,18 @@ p {
 
 #submitadmin {
 	font-size: 1.2vw;
+}
+
+@media all and (max-width: 600px) {
+	.navbartitle {
+		flex-direction: column;
+		justify-content: center;
+		height: 15vh;
+		margin-top: 1rem;
+		flex-wrap: nowrap;
+	}
+	.searchbar {
+		margin-top: 1rem;
+		margin-right: 0;
+	}
 }

@@ -1,11 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
 import Smile from "./ExperienceCardSmile";
 import timeSinceCreate from "../utils/timeSinceCreation";
 import Button from "../styled-components/Button";
 import Paragraph from "./../styled-components/Paragraph";
-import { TextContainer, DivContainer } from "../styled-components/Containers";
-import { RowResponsive } from "./../styled-components/Responsive";
+import {
+	TextContainer,
+	DivContainer,
+	TagContainer,
+} from "../styled-components/Containers";
 
 export default function ExperiencesCard({
 	socials,
@@ -29,15 +33,15 @@ export default function ExperiencesCard({
 	}
 
 	return (
-		<DivContainer>
+		<DivContainer fontSize="18px" width="350px" margin="1rem auto">
 			<Smile overallExperience={overall_experience} />
 			<TextContainer>
-				<Paragraph width="25vw">Details:{details}</Paragraph>
+				<Paragraph fontSize="1rem">{socials}</Paragraph>
+				<Paragraph width="80%">{details}</Paragraph>
+				<Paragraph fontSize="0.9rem">Posted {timeString} ago</Paragraph>
 			</TextContainer>
 
-			<p>{socials}</p>
-			<p>Posted {timeString} ago</p>
-			<RowResponsive>{renderTags()}</RowResponsive>
+			<TagContainer>{renderTags()}</TagContainer>
 		</DivContainer>
 	);
 }

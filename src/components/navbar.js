@@ -34,7 +34,6 @@ left: 4rem;
 	
 		justify-content: center;
 		width: 100%;
-		height: 20vh;
 		position: static;
 		display: flex;
 		align-items: center;

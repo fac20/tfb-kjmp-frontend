@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
+import styled from "styled-components";
 
-import { Container } from "./../styled-components/Containers";
+import { Container, GridContainer } from "./../styled-components/Containers";
 import Button from "./../styled-components/Button";
 import ExperiencesCard from "./../components/experiencecard";
 import { RowResponsive } from "./../styled-components/Responsive";
@@ -38,13 +39,11 @@ export default function ExperienceContent() {
 				<NavBarSide />
 				<Container justify="center">
 					<Link to={`${url}/shareexperience`}>
-						<Button width="15vw" left="-15vw" medialeft="0vw">
-							Add Your own
-						</Button>
+						<Button medialeft="0vw">Add Your own</Button>
 					</Link>
 					<DropdownFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 				</Container>
-				<Container justify="center" align="flex-start">
+				<GridContainer>
 					{experiencesData
 						? experiencesData
 								.filter(x => {
@@ -73,7 +72,7 @@ export default function ExperienceContent() {
 									),
 								)
 						: null}
-				</Container>
+				</GridContainer>
 			</RowResponsive>
 		</>
 	);

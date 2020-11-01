@@ -17,4 +17,9 @@ export default styled.button`
 		font-size: 10px;
 		margin-left: ${props => props.medialeft};
 	}
+
+	&:hover {
+		transform: translate(3px, 5px);
+		box-shadow: none;
+	}
 `;

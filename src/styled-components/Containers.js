@@ -5,9 +5,9 @@ export const TextContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	width: 30vw;
-
-	@media all and (max-width: 700px) {
+	@media all and (max-width: 768px) {
 		width: 60vw;
 	}
 `;
@@ -37,12 +37,19 @@ export const DivContainer = styled.div`
 	align-items: center;
 	flex-direction: ${props => props.direction || "column"};
 	width: ${props => props.width};
+	max-width: ${props => props.maxWidth};
 	height: ${props => props.height};
 	margin: ${props => props.margin || "1rem"};
 	/* border: red solid 3px; */
 	background: ${props => props.back || "#ffffff"};
 	box-shadow: ${props => props.shadow || "7px 10px #000000"};
 	color: ${props => props.color || "black"};
+	font-size: ${props => props.fontSize};
+
+
+	@media screen and (max-width: 768px){
+	width: auto;
+	margin: 2rem 5%;
 `;
 
 export const FlexCont = styled.div`
@@ -67,6 +74,28 @@ export const FlexCont = styled.div`
 	@media all and (max-width: 768px) {
 		width: ${props => props.media};
 	}
+`;
+
+export const GridContainer = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 65%;
+	@media screen and (max-width: 1200px) {
+		grid-template-columns: 1fr;
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
+`;
+
+export const TagContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: ${props => props.width};
 `;
 
 // Container hierarchy:

@@ -13,7 +13,7 @@ export default function ExperienceCardSmile({ overallExperience }) {
 			src={smileyIcon[overallExperience]}
 			alt="random"
 			className="whatever"
-			width="3vw"
+			width="2rem"
 		/>
 	);
 }

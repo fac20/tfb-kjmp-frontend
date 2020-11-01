@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 
 import ThingsToDoCard from "./../components/thingstodo-card";
-import { Container } from "./../styled-components/Containers";
+import { Container, GridContainer } from "./../styled-components/Containers";
 import Button from "./../styled-components/Button";
 import { RowResponsive } from "./../styled-components/Responsive";
 import { NavBarSide, NavBarTitle } from "./../components/navbar";
@@ -34,12 +34,10 @@ export default function ThingsToDo(props) {
 				<NavBarSide />
 				<Container justify="center">
 					<Link to={`${url}/sharethingstodo`}>
-						<Button width="15vw" left="-15vw" medialeft="0vw">
-							Add Your own
-						</Button>
+						<Button medialeft="0vw">Add Your own</Button>
 					</Link>
 				</Container>
-				<Container justify="center">
+				<GridContainer>
 					{thingsToDoData ? (
 						thingsToDoData.map(
 							({ name, details, date_time, location, created_at, id }) => (
@@ -57,7 +55,7 @@ export default function ThingsToDo(props) {
 					) : (
 						<h1>No Information Yet.....</h1>
 					)}
-				</Container>
+				</GridContainer>
 			</RowResponsive>
 		</>
 	);
