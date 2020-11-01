@@ -1,27 +1,35 @@
 import React from "react";
-import NavList from "./../components/navList";
-import { Link } from "react-router-dom";
-import SearcBar from "./../components/searchbar";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
-export function NavBarSide({ countryName }) {
+import NavList from "./../components/navList";
+import SearcBar from "./../components/searchbar";
+import { useAppContext } from "../App";
+
+export function NavBarSide() {
 	return (
 		<>
 			<div className="sticky">
 				<section className="navbar">
-					<NavList countryName={countryName} />
+					<NavList />
 				</section>
 			</div>
 		</>
 	);
 }
 
-export function NavBarTitle({ countryName }) {
+export function NavBarTitle() {
+	const { countryName } = useAppContext();
+
 	const location = useLocation();
 	const path = location.pathname.split("/");
 	const continentName = path[2];
 	path.pop();
+	if (
+		path[path.length - 1] === "thingstodo" ||
+		path[path.length - 1] === "experiences"
+	)
+		path.pop();
 	let joinPath = path.join("/");
 
 	const continentsObject = {

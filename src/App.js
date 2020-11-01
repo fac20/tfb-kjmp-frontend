@@ -1,4 +1,5 @@
 import React from "react";
+import { createContext, useContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./pages/landing.js";
@@ -13,49 +14,39 @@ import AdminDashboard from "./pages/admin/adminDashboard";
 import ExperiencesForm from "./components/ExperiencesForm";
 import ThingsToDoForm from "./components/ThingsToDoForm";
 
+const AppContext = createContext();
+
+const useAppContext = () => useContext(AppContext);
+
 function App() {
-	const [countryName, setCountryName] = React.useState("");
+	const [countryName, setCountryName] = useState("");
 
 	return (
-		<>
+		<AppContext.Provider value={{ countryName, setCountryName }}>
 			<Router>
 				<Switch>
 					<Route exact path="/continents">
 						<Continents />
 					</Route>
 					<Route path="/continents/:name/:id/thingstodo/sharethingstodo">
-						<ThingsToDoForm
-							countryName={countryName}
-							setCountryName={setCountryName}
-						/>
+						<ThingsToDoForm />
 					</Route>
 					<Route path="/continents/:name/:id/experiences/shareexperience">
-						<ExperiencesForm
-							countryName={countryName}
-							setCountryName={setCountryName}
-						/>
+						<ExperiencesForm />
 					</Route>
 					<Route path="/continents/:name/:id/laws">
-						<Laws countryName={countryName} setCountryName={setCountryName} />
+						<Laws />
 					</Route>
 					<Route path="/continents/:name/:id/thingstodo">
-						<ThingsToDo
-							countryName={countryName}
-							setCountryName={setCountryName}
-						/>
+						<ThingsToDo />
 					</Route>
 					<Route path="/continents/:name/:id/businesses">
-						<Businesses
-							countryName={countryName}
-							setCountryName={setCountryName}
-						/>
+						<Businesses />
 					</Route>
 					<Route path="/continents/:name/:id/experiences">
-						<ExperienceContent
-							countryName={countryName}
-							setCountryName={setCountryName}
-						/>
+						<ExperienceContent />
 					</Route>
+
 					<Route path="/continents/:name">
 						<Countries />
 					</Route>
@@ -70,8 +61,8 @@ function App() {
 					</Route>
 				</Switch>
 			</Router>
-		</>
+		</AppContext.Provider>
 	);
 }
 
-export default App;
+export { App, useAppContext };

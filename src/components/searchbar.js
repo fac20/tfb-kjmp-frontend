@@ -1,5 +1,7 @@
 import React from "react";
+
 import { SearchBarBox, SearchBarBtn } from "./../styled-components/SearchBar";
+
 export default function SearchBar() {
 	return (
 		<section className="searchbar">

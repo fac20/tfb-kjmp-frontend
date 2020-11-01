@@ -1,8 +1,8 @@
+import React from "react";
+
+import Button from "./../styled-components/Button";
 import { ColumnResponsive } from "./../styled-components/Responsive";
 import { Container } from "./../styled-components/Containers";
-// import { Link } from "react-router-dom";
-import Button from "./../styled-components/Button";
-import React from "react";
 
 export default function AdminNavBar({ setPage }) {
 	return (
@@ -14,9 +14,6 @@ export default function AdminNavBar({ setPage }) {
 				<Button background="transparent" onClick={() => setPage("thingstodo")}>
 					Things To Do
 				</Button>
-				{/* <Button background="transparent" onClick={handleClick}>
-					Businesses
-				</Button> */}
 			</ColumnResponsive>
 		</Container>
 	);

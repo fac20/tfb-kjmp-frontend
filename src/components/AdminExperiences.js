@@ -17,7 +17,6 @@ export default function ExperiencesAdmin() {
 			.then(result => result.json())
 			.then(result => {
 				setExperiencesPosts(result);
-				console.log(result);
 			})
 			.catch(error => error);
 	}, [updated]);

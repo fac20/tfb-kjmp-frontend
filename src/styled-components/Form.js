@@ -14,7 +14,8 @@ const FormCont = styled.form`
 	font-family: "Anonymous Pro", monospace;
 	font-size: 1.3rem;
 	font-weight: 800px;
-
+	overflow: scroll;
+	/* writing so i can commit  */
 	@media screen and (max-width: 700px) {
 		width: 80vw;
 	}
@@ -36,7 +37,7 @@ const Label = styled.label`
 	background: hsl(188, 13%, 45%);
 	border-radius: 5px;
 	margin-top: 3rem;
-	color: ${props => props.color || "hsl(188, 13%, 45%)"};
+	color: ${props => props.color || "hsl(31, 95%, 84%)"};
 	@media all and (max-width: 411px) {
 		font-size: 15px;
 	}
@@ -68,7 +69,7 @@ const Input = styled.input`
 	border: hsl(31, 95%, 84%) 3px solid;
 	margin-top: 0.5rem;
 	width: 80%;
-	height: 4vh;
+	height: ${props => props.height || "4vh"};
 	border-radius: 20px;
 	background: transparent;
 	font-size: 2rem;
@@ -76,12 +77,20 @@ const Input = styled.input`
 	font-family: "Anonymous Pro", monospace;
 	padding: 1.5rem 0.5rem;
 	color: hsl(31, 95%, 84%);
+	&::placeholder {
+		color: hsl(31, 95%, 84%);
+	}
 `;
 
 const CheckboxInput = styled.input`
-	margin-left: 14rem;
+	margin-left: 10rem;
+	margin-right: 3rem;
 	height: 1.3rem;
 	width: 1.3rem;
+	@media all and (max-width: 500px) {
+		margin-left: 0.5rem;
+		margin-right: 2rem;
+	}
 `;
 
 const TextArea = styled.textarea`

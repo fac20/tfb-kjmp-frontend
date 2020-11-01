@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, DivContainer } from "./../styled-components/Containers";
+import { Container } from "./../styled-components/Containers";
 import AboutNav from "../components/aboutnav";
 import HowToCard from "./../components/howtocards";
 import teamimg from "./../images/team.png";
@@ -83,14 +83,14 @@ export default function About() {
 					<h3>TERRENCE </h3>
 					<h3>JOSH </h3>
 					<h3>EPHIE </h3>
-					<p>
-						What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-						printing and typesetting industry. Lorem Ipsum has been the
-						industry's standard dummy text ever since the 1500s, when an unknown
-						printer took a galley of type and scrambled it to make a type
-						specimen book. It has survived not only five centuries, but also the
-					</p>
 				</div>
+				<p className="footertext">
+					What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
+					and typesetting industry. Lorem Ipsum has been the industry's standard
+					dummy text ever since the 1500s, when an unknown printer took a galley
+					of type and scrambled it to make a type specimen book. It has survived
+					not only five centuries, but also the
+				</p>
 			</div>
 		</>
 	);

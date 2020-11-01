@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../styled-components/Button";
 
 export function AdminApproveButton({ id, table, setUpdated }) {

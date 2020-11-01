@@ -40,7 +40,7 @@ Allows users to input user data from a postgres database using an RESTful API bu
 - CircleCI
 - CodeCov 
 
-#### Dependencies
+#### Dependencies (backend) 
 
 - cors - provides a Connect/Express middleware that can be used to enable CORS with various options
 - dotenv - allows private variables to be added (API)
@@ -208,9 +208,9 @@ Velocity for this week can be viewed on [Notion](https://www.notion.so/3bd0bf72c
 - Finish adding 'things to do' form 
 - Finish admin pages for approving and deleting posts 
 - Create 'about' page 
+- Created filtering for tags 
+- Styling fixes
 
-## Reflections and what next
-### 👨‍🏫 Key takeaways
 
 
 ### ⏳ Additional Features

@@ -1,10 +1,11 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+
 import { tada } from "react-animations";
 import { Link } from "react-router-dom";
 import { NavBarTitle } from "./../components/navbar";
 import QuickExitButton from "./../components/exitButton";
-import { FlexCont, Container } from "./../styled-components/Containers";
+import { FlexCont } from "./../styled-components/Containers";
 
 import background from "./../images/form-back.svg";
 
