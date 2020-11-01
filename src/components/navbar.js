@@ -9,14 +9,40 @@ import { useAppContext } from "../App";
 export function NavBarSide() {
 	return (
 		<>
-			<div className="sticky">
-				<section className="navbar">
-					<NavList />
-				</section>
-			</div>
+			<NavContainer>
+				<NavList />
+			</NavContainer>
 		</>
 	);
 }
+
+{
+	/* <>		<div classname="sticky">
+				<section classname="navbar">
+					<NavList />
+				</section >
+			</div>	
+		</> */
+}
+
+const NavContainer = styled.div`
+position: fixed;
+top: 15vh;
+left: 4rem;
+/* border: solid black 1px; */
+@media all and (max-width: 768px) {
+	
+		justify-content: center;
+		width: 100%;
+		height: 20vh;
+		position: static;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	
+
+`;
 
 export function NavBarTitle() {
 	const { countryName } = useAppContext();

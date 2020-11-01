@@ -37,7 +37,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 100vw;
 	height: 20vh;
 	/* border: solid black 3px; */
 }
@@ -45,7 +45,7 @@ body {
 	margin-right: 3rem;
 }
 .title {
-	margin-left: 2rem;
+	margin-left: 4rem;
 }
 
 .links,

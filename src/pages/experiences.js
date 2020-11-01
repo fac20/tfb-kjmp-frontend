@@ -36,13 +36,13 @@ export default function ExperienceContent() {
 			<QuickExitButton />
 			<RowResponsive>
 				<NavBarSide />
+				<Link to={`${url}/shareexperience`}>
+					<Button width="15vw" left="-15vw" medialeft="0vw">
+						Add Your own
+					</Button>
+				</Link>
+				<DropdownFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 				<Container justify="center" align="flex-start">
-					<Link to={`${url}/shareexperience`}>
-						<Button width="15vw" left="-15vw" medialeft="0vw">
-							Add Your own
-						</Button>
-					</Link>
-					<DropdownFilter filterBy={filterBy} setFilterBy={setFilterBy} />
 					{experiencesData
 						? experiencesData
 								.filter(x => {
