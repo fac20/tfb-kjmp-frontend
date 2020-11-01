@@ -6,7 +6,7 @@ export default styled.button`
 	border: solid black 2px;
 	box-shadow: 3px 5px #000000;
 	background: ${props => props.background};
-	margin: 0.9rem 0.9rem;
+	margin: ${props => props.margin || "0.9rem 0.9rem"};
 	padding: 0.2rem;
 	font-family: "Anonymous Pro", monospace;
 	width: ${props => props.width};
@@ -16,5 +16,10 @@ export default styled.button`
 	@media all and (max-width: 938px) {
 		font-size: 10px;
 		margin-left: ${props => props.medialeft};
+	}
+
+	&:hover {
+		transform: translate(3px, 5px);
+		box-shadow: none;
 	}
 `;

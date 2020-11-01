@@ -57,11 +57,9 @@ function App() {
 					<Route exact path="/admin/login">
 						<LoginPage />
 					</Route>
-
 					<Route exact path="/about">
 						<About />
 					</Route>
-
 					<Route exact path="/admin/">
 						<AdminDashboard />
 					</Route>

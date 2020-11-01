@@ -3,6 +3,7 @@ import React from "react";
 import { TextContainer, DivContainer } from "../styled-components/Containers";
 import Image from "../styled-components/Img";
 import Paragraph from "./../styled-components/Paragraph";
+import timeSinceCreate from "../utils/timeSinceCreation";
 
 export default function ThingsToDoCard({
 	src,
@@ -14,41 +15,22 @@ export default function ThingsToDoCard({
 }) {
 	const dateNow = new Date().toISOString();
 
-	const start = new Date(created_at).getTime();
-	const end = new Date(dateNow).getTime();
-	let seconds = Math.round(Math.abs(end - start) / 1000); // We'll round away millisecond differences.
-	const days = Math.floor(seconds / 86400);
-	seconds -= days * 86400;
-	const hours = Math.floor(seconds / 3600);
-	seconds -= hours * 3600;
-	const minutes = Math.floor(seconds / 60);
-	seconds -= minutes * 60;
+	const timeString = timeSinceCreate(created_at);
 
 	return (
 		<>
-			<DivContainer>
+			<DivContainer fontSize="18px" width="375px" margin="1rem auto">
 				<Image src={src} alt="random" className="whatever" width="20vw" />
 				<h1>{name}</h1>
 				<TextContainer>
-					<Paragraph>Details:{details}</Paragraph>
+					<Paragraph>{details}</Paragraph>
+					<Paragraph fontSize="0.9rem">
+						Date of Event:
+						{date_time}
+					</Paragraph>
+					<Paragraph fontSize="0.9rem">Location:{location}</Paragraph>
+					<Paragraph fontSize="0.9rem">Posted {timeString} ago</Paragraph>
 				</TextContainer>
-				<p>
-					Date of Event:
-					{date_time}
-				</p>
-				<p>Location:{location}</p>
-				<p>
-					Posted{" "}
-					{(days && (days === 1 ? days + " day" : days + " days")) ||
-						(hours && (hours === 1 ? hours + " hour" : hours + " hours")) ||
-						(minutes &&
-							(minutes === 1 ? minutes + " minute" : minutes + " minutes")) ||
-						(seconds &&
-							(seconds === 1
-								? seconds + " second"
-								: seconds + " seconds"))}{" "}
-					ago
-				</p>
 				{/* <Button background="hsl(46, 77%, 68%)">hello</Button> */}
 			</DivContainer>
 		</>

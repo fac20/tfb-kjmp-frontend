@@ -37,7 +37,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 100vw;
 	height: 20vh;
 	/* border: solid black 3px; */
 }
@@ -45,7 +45,7 @@ body {
 	margin-right: 3rem;
 }
 .title {
-	margin-left: 2rem;
+	margin-left: 4rem;
 }
 
 .links,
@@ -82,7 +82,9 @@ a:hover {
 	}
 
 	.navbartitle {
-		justify-content: center;
+		justify-content: space-around;
+		height: 10vh;
+		margin-top: 1rem;
 	}
 	body {
 		font-size: 10px;
@@ -241,4 +243,18 @@ p {
 
 #submitadmin {
 	font-size: 1.2vw;
+}
+
+@media all and (max-width: 600px) {
+	.navbartitle {
+		flex-direction: column;
+		justify-content: center;
+		height: 15vh;
+		margin-top: 1rem;
+		flex-wrap: nowrap;
+	}
+	.searchbar {
+		margin-top: 1rem;
+		margin-right: 0;
+	}
 }
