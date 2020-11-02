@@ -63,6 +63,9 @@ function App() {
 					<Route exact path="/admin/">
 						<AdminDashboard />
 					</Route>
+					<Route path="/*">
+						<Continents />
+					</Route>
 				</Switch>
 			</Router>
 		</AppContext.Provider>
