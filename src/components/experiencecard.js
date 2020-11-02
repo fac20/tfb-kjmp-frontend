@@ -35,7 +35,7 @@ export default function ExperiencesCard({
 	return (
 		<DivContainer fontSize="18px" width="350px" margin="1rem auto">
 			<Smile overallExperience={overall_experience} />
-			<TextContainer>
+			<TextContainer width="100%">
 				<Paragraph fontSize="1rem">{socials}</Paragraph>
 				<Paragraph width="80%">{details}</Paragraph>
 				<Paragraph fontSize="0.9rem">Posted {timeString} ago</Paragraph>

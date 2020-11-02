@@ -20,9 +20,9 @@ export default function ThingsToDoCard({
 	return (
 		<>
 			<DivContainer fontSize="18px" width="375px" margin="1rem auto">
-				<Image src={src} alt="random" className="whatever" width="20vw" />
+				<Image src={src} alt="random" className="whatever" width="90%" />
 				<h1>{name}</h1>
-				<TextContainer>
+				<TextContainer width="100%">
 					<Paragraph>{details}</Paragraph>
 					<Paragraph fontSize="0.9rem">
 						Date of Event:
