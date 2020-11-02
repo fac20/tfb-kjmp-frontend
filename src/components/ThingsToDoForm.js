@@ -93,7 +93,7 @@ export default function ThingsToDoForm() {
 								setLocation(event.target.value);
 							}}
 						/>
-						<Button>SUBMIT</Button>
+						<Button width="12vw">SUBMIT</Button>
 					</FormCont>
 				</Container>
 			)}

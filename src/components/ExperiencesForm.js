@@ -153,9 +153,7 @@ const ExperiencesForm = props => {
 						Tag your post!
 					</Label>
 					<Fieldset id="tags">{renderCheckboxes()}</Fieldset>
-					<Button fontsize="1.5vw" height="7vh" width="7vw">
-						Submit
-					</Button>
+					<Button width="12vw">Submit</Button>
 				</FormCont>
 			</Container>
 		);
