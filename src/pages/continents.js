@@ -35,6 +35,7 @@ export default function Continents() {
 			<NavBarTitle />
 			<QuickExitButton />
 			<FlexCont
+				margin="auto"
 				width="50vw"
 				height="40vh"
 				back={background}

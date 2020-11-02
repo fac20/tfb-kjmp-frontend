@@ -6,7 +6,7 @@ export const TextContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 30vw;
+	width: ${props => props.width || "30vw"};
 	@media all and (max-width: 768px) {
 		width: 60vw;
 	}
@@ -62,6 +62,8 @@ export const FlexCont = styled.div`
 	flex-direction: ${props => props.direction};
 	width: ${props => props.width};
 	min-height: ${props => props.height};
+	margin: ${props => props.margin};
+
 	background: ${props => props.back};
 	padding-top: ${props => props.padTop};
 	padding: 0.5rem;
