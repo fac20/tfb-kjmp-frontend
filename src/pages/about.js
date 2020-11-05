@@ -48,18 +48,54 @@ export default function About() {
 					step=" Click to see what things are availible to do in that city"></HowToCard>
 			</div>
 			<div className="aboutbrand2">
-				<h2>THE BRAND </h2>
+				<h2>ABOUT BLACK QUEER TRAVEL GUIDE </h2>
 				<div className="textabout">
 					<p>
-						What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-						printing and typesetting industry. Lorem Ipsum has been the
-						industry's standard dummy text ever since the 1500s, when an unknown
-						printer took a galley of type and scrambled it to make a type
-						specimen book. It has survived not only five centuries, but also the
-						leap into electronic typesetting, remaining essentially unchanged.
-						It was popularised in the 1960s with the release of Letraset sheets
-						containing Lorem Ipsum passages, and more recently with desktop
-						publishing software like Aldus PageMaker including versions of Lorem
+						Black Queer Travel Guide is a digital resource prioritising Black
+						queer travellers and our safety as we navigate the world, through
+						offering experiences, advice and information on destinations around
+						the globe.
+					</p>
+					<p>
+						You have to consider your personal safety and the safety of those
+						you’re travelling with, particularly if you’re visibly queer, how
+						comfortable you feel travelling with your partner(s) and more. We
+						have to assess and reassess our surroundings and where we visit
+						constantly. Our resources are limited and they often only pertain to
+						‘Black travel’ or ‘LGBTQ+ travel’, meaning that we have to forge
+						something for ourselves in the middle - or simply google ‘LGBTQ+
+						rights in [insert country]’. It is simply not enough and BQTG aims
+						to contribute towards filling those gaps.
+					</p>
+					<p>
+						As a registered charitable company (CIC), BQTG is committed to the
+						Black queer communities it will be serving and as a result, profits
+						made will be going straight into our services and supporting local
+						queer charities and organisations around the globe.
+					</p>
+					<p>
+						For four months, we spoke to over 20 Black queer activists and
+						community organisers around the world, from Jamaica to Papua New
+						Guinea to Nigeria, finding out about the daily precautions they take
+						in their countries, the grassroots work they're doing in their
+						communities and how they travel and navigate life. This research has
+						informed the building of the resources and will continue to shape
+						how we grow.
+					</p>
+					<p>
+						Through the afore-mentioned research carried with Black queer
+						activists globally, it’s also clear how much support is needed by
+						people who have been arrested, harassed by the public and police and
+						as a result, we would also seek to support these individuals through
+						financial support for legal services and representation.
+					</p>
+					<p>
+						We’re aiming to create a hub for Black queer activists to be able to
+						share resources, advice and more, alongside creating a conference
+						for Black queer creatives and activists to be about to share their
+						work, research, resources and practices. Eventually, we hope to run
+						retreats catered specifically for Black queer people, with free
+						retreats for younger Black queer people.
 					</p>
 				</div>
 			</div>
@@ -68,21 +104,64 @@ export default function About() {
 				<div className="textabout">
 					<h3>PAULA AKPAN </h3>
 					<p>
-						What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-						printing and typesetting industry. Lorem Ipsum has been the
-						industry's standard dummy text ever since the 1500s, when an unknown
-						printer took a galley of type and scrambled it to make a type
-						specimen book. It has survived not only five centuries, but also the
+						Paula Akpan is a journalist, historian and public speaker. A
+						sociology graduate from the University of Nottingham, her work
+						mainly focuses on blackness, queerness, and social politics and she
+						regularly writes for a variety of publications including Vogue, Teen
+						Vogue, The Independent, Stylist, VICE, i-D, Bustle, Time Out London
+						and more.
+					</p>
+					<p>
+						She’s also a published essayist, having written an essay on Black
+						women and community in Slay In Your Lane’s anthology Loud Black
+						Girls (published by 4th Estate Books at HarperCollins, 1 Oct 2020)
+						and another on Black British Lesbians and their relationship with
+						the UK Black Women’s movement for the forthcoming Queer Bible
+						anthology (published by HQ at HarperCollins, 10 Jun 2021).
+					</p>
+					<p>
+						Paula is currently a fully-funded Masters student at Goldsmiths,
+						studying Black British History with an interest in mapping out the
+						lives and activism of Black British lesbians and queer women during
+						the 70s and 80s.
 					</p>
 				</div>
 			</div>
 			<div className="aboutbrand2">
 				<h2>THE DEVELOPERS </h2>
 				<div className="textabout">
-					<h3>TRISH </h3>
-					<h3>TERRENCE </h3>
-					<h3>JOSH </h3>
-					<h3>EPHIE </h3>
+					<h3>
+						<a
+							href="https://github.com/ephieo"
+							target="_blank"
+							rel="noopener noreferrer">
+							EPHIE
+						</a>
+					</h3>
+					<h3>
+						<a
+							href="https://github.com/jhart5"
+							target="_blank"
+							rel="noopener noreferrer">
+							JOSH
+						</a>
+					</h3>
+					<h3>
+						<a
+							href="https://github.com/netceer"
+							target="_blank"
+							rel="noopener noreferrer">
+							TERRENCE
+						</a>
+					</h3>
+					<h3>
+						<a
+							href="https://github.com/trishtracking"
+							target="_blank"
+							rel="noopener noreferrer">
+							TRISH
+						</a>
+					</h3>
 				</div>
 				<p className="footertext">
 					What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
