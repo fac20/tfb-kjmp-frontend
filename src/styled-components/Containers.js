@@ -99,8 +99,3 @@ export const TagContainer = styled.div`
 	flex-wrap: wrap;
 	width: ${props => props.width};
 `;
-
-// Container hierarchy:
-// container
-// div container
-// text container

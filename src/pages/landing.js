@@ -14,8 +14,7 @@ export default function LandingPage() {
 				</Link>
 			</Container>
 			<footer>
-				<Link to="/admin/login">Admin</Link>
-				<Link to="/about">About</Link>
+				<Link to="/admin/login">Admin</Link> |<Link to="/about"> About</Link>
 			</footer>
 			{/* <Button>Enter</Button> */}
 		</>

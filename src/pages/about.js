@@ -12,19 +12,15 @@ export default function About() {
 			<Container
 				justify="center"
 				align="center"
-				back="hsl(348, 33%, 76%)"
+				back="hsl(349, 43%, 40%)"
 				width="100vw"
 				height="100vh"
 				direction="column"
-				color="hsl(348, 33%, 76%)"
+				color="hsl(349, 43%, 40%)"
 				size="cover">
 				<div className="aboutbrand">
 					<h2 className="aboutus">ABOUT US</h2>
-					<img
-						src={teamimg}
-						alt="svg img of team illustration"
-						className="teamimg"
-					/>
+					<img src={teamimg} alt="illustration of team" className="teamimg" />
 				</div>
 			</Container>
 			<div className="howtousetitle">
@@ -54,18 +50,15 @@ export default function About() {
 						Black Queer Travel Guide is a digital resource prioritising Black
 						queer travellers and our safety as we navigate the world, through
 						offering experiences, advice and information on destinations around
-						the globe.
-					</p>
-					<p>
-						You have to consider your personal safety and the safety of those
-						you’re travelling with, particularly if you’re visibly queer, how
-						comfortable you feel travelling with your partner(s) and more. We
-						have to assess and reassess our surroundings and where we visit
-						constantly. Our resources are limited and they often only pertain to
-						‘Black travel’ or ‘LGBTQ+ travel’, meaning that we have to forge
-						something for ourselves in the middle - or simply google ‘LGBTQ+
-						rights in [insert country]’. It is simply not enough and BQTG aims
-						to contribute towards filling those gaps.
+						the globe. You have to consider your personal safety and the safety
+						of those you’re travelling with, particularly if you’re visibly
+						queer, how comfortable you feel travelling with your partner(s) and
+						more. We have to assess and reassess our surroundings and where we
+						visit constantly. Our resources are limited and they often only
+						pertain to ‘Black travel’ or ‘LGBTQ+ travel’, meaning that we have
+						to forge something for ourselves in the middle - or simply google
+						‘LGBTQ+ rights in [insert country]’. It is simply not enough and
+						BQTG aims to contribute towards filling those gaps.
 					</p>
 					<p>
 						As a registered charitable company (CIC), BQTG is committed to the
@@ -103,6 +96,7 @@ export default function About() {
 				<h2>THE CREATOR </h2>
 				<div className="textabout">
 					<h3>PAULA AKPAN </h3>
+					<br></br>
 					<p>
 						Paula Akpan is a journalist, historian and public speaker. A
 						sociology graduate from the University of Nottingham, her work
@@ -162,14 +156,20 @@ export default function About() {
 							TRISH
 						</a>
 					</h3>
+					<br></br>
+					<p>
+						The developer team built this site as part of{" "}
+						<a
+							href="https://www.foundersandcoders.com/tech-for-better/"
+							target="_blank"
+							rel="noopener noreferrer">
+							Tech for Better
+						</a>
+						, a programme for founders, social entrepreneurs and charity workers
+						to learn Product Management by working with a Product Team to
+						design, build and test a new socially beneficial digital service.
+					</p>
 				</div>
-				<p className="footertext">
-					What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-					and typesetting industry. Lorem Ipsum has been the industry's standard
-					dummy text ever since the 1500s, when an unknown printer took a galley
-					of type and scrambled it to make a type specimen book. It has survived
-					not only five centuries, but also the
-				</p>
 			</div>
 		</>
 	);
