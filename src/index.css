@@ -62,13 +62,6 @@ a:hover {
 	overflow: scroll;
 }
 
-/* .countries::-webkit-scrollbar {
-	-webkit-appearance: vertical;
-}
-.countries::-webkit-scrollbar-track {
-	background: pink;
-} */
-
 @media all and (max-width: 768px) {
 	.navbar,
 	.sticky {
@@ -118,34 +111,33 @@ p {
 	padding-top: 2rem;
 	display: flex;
 	justify-content: center;
-	background: hsl(348, 33%, 76%);
+	background: hsl(348, 33%, 56%);
 	color: hsl(35, 67%, 99%);
 }
-.aboutbrand {
+.aboutus {
 	padding-top: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background: hsl(348, 33%, 76%);
+	background: hsl(348, 33%, 56%);
 	color: hsl(35, 67%, 99%);
 	width: 100%;
 	height: 100vh;
-	background-size: cover;
-	overflow: scroll;
 }
-.aboutbrand2 {
+.aboutbrand {
 	padding-top: 2rem;
 	display: flex;
+	overflow: auto;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	background: hsl(348, 33%, 76%);
+	background: hsl(348, 33%, 56%);
 	color: hsl(35, 67%, 99%);
 	width: 100%;
-	height: 50vh;
+	font-size: 1.4rem;
 }
 .howtouse {
 	padding-top: 2rem;
@@ -154,7 +146,7 @@ p {
 	flex-direction: row;
 	flex-wrap: wrap;
 	background: hsl(35, 67%, 99%);
-	color: hsl(348, 33%, 76%);
+	color: hsl(348, 33%, 56%);
 	max-width: 100vw;
 	height: 70vh;
 	overflow: scroll;
@@ -166,7 +158,7 @@ p {
 	flex-direction: row;
 	flex-wrap: wrap;
 	background: hsl(35, 67%, 99%);
-	color: hsl(348, 33%, 76%);
+	color: hsl(348, 33%, 56%);
 	width: 100%;
 	height: 10vh;
 }
@@ -176,26 +168,28 @@ p {
 	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	border: solid 1px hsl(348, 33%, 76%);
+	border: solid 1px hsl(348, 33%, 56%);
 	max-width: 20vw;
 	max-height: 30vh;
 	padding: 3rem;
 	margin: 2rem;
 }
 .howtocard::first-letter {
-	border-bottom: solid 2px hsl(348, 33%, 76%);
+	border-bottom: solid 2px hsl(348, 33%, 56%);
 }
 .textabout {
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	flex-wrap: wrap;
-	/* border: solid hsl(35, 67%, 99%) 2px; */
-	width: 50vw;
-	height: 20vh;
-	font-size: 20px;
-	margin-top: 2rem;
+	background: hsl(348, 33%, 56%);
+	color: hsl(35, 67%, 99%);
+	/* border: solid hsl(40, 48%, 48%) 2px; */
+	width: 48%;
+	font-size: 28px;
+	margin-top: 1.8rem;
+	margin-bottom: 1.8rem;
 }
 
 .teamimg {
@@ -203,17 +197,13 @@ p {
 	max-height: 80vh;
 }
 
-.aboutus {
+.aboutusheading {
 	font-size: 10rem;
 	margin-left: 5rem;
 }
 
 p {
 	text-align: center;
-}
-
-.footertext {
-	width: 30vw;
 }
 
 @media all and (max-width: 900px) {
@@ -227,7 +217,7 @@ p {
 		flex-wrap: wrap;
 	}
 	.aboutus {
-		font-size: 5rem;
+		font-size: 6rem;
 	}
 
 	.howtocard {
@@ -236,7 +226,7 @@ p {
 		font-size: 0.5rem;
 	}
 	.aboutus {
-		font-size: 5vw;
+		font-size: 6vw;
 	}
 }
 /* admin form */

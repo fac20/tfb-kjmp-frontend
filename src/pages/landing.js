@@ -1,8 +1,8 @@
 import React from "react";
-
-import logo from "./../images/logo.svg";
+import logo from "./../images/logo.png";
 import { Container } from "./../styled-components/Containers";
 import { Link } from "react-router-dom";
+import Button from "../styled-components/Button";
 import Img from "./../styled-components/Img";
 
 export default function LandingPage() {
@@ -14,8 +14,9 @@ export default function LandingPage() {
 				</Link>
 			</Container>
 			<footer>
-				<Link to="/admin/login">Admin</Link>
+				<Link to="/admin/login">Admin</Link> |<Link to="/about"> About</Link>
 			</footer>
+			{/* <Button>Enter</Button> */}
 		</>
 	);
 }
